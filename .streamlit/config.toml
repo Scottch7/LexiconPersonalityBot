@@ -1,0 +1,14 @@
+# SJSU colors: blue #0055A2, gold #E5A823
+[theme]
+primaryColor = "#0055A2"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#EEF3F9"
+textColor = "#1C2B39"
+font = "sans serif"
+
+[server]
+# Skip Streamlit's first-run email prompt (it blocks the app from starting)
+headless = true
+
+[browser]
+gatherUsageStats = false
