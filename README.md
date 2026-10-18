@@ -1,19 +1,36 @@
 # Lexicon Personality Bot
 
-CMPE 259 (SJSU) · Team 3. A bot that learns how a person writes (their go-to words, phrases, tone and structure) and drafts new text in their voice.
+CMPE 259 (SJSU). A bot that learns how a person writes (their go-to words, phrases, tone and structure) and drafts new text in their voice.
 
-## Style questionnaire (v0)
+## Style questionnaire
 
-A Streamlit form that collects:
+A Streamlit form where each question asks for a specific kind of reply (a **label**, e.g. "Refuse / Decline" or "Acknowledge") in a random everyday situation (a **context**, e.g. a restaurant plan or a group project).
 
-1. Name or nickname
-2. Writing style questions (formality, tone, emojis, greetings, sign-offs, structure)
-3. Replies to 10 everyday scenarios (same prompts for everyone, so we can compare styles)
-4. Extra writing samples (optional)
+- Every label is asked once, in a shuffled order, each with a random context.
+- **New topics** reshuffles the situations (and clears the answers).
+- Short replies count: "got it" or an emoji is a valid answer.
+- **Nothing is saved on the server.** When finished, the person downloads their answers as a CSV and sends it to the team.
 
-Answers are saved as one JSON file per submission in `data/responses/`. That folder is git-ignored, so answers stay on your computer and never get pushed.
+### CSV format
 
-### Run it
+One row per question:
+
+| Column | Meaning |
+| --- | --- |
+| `participant` | Nickname the person entered |
+| `submitted_at` | When they finished |
+| `question` | Question number (1 = first shown) |
+| `label` | Reply type, e.g. `Refuse / Decline` |
+| `context` | Situation, e.g. `Restaurant` |
+| `message` | What was said to them |
+| `instruction` | What their reply should do |
+| `response` | Their reply |
+
+### Change the labels or situations
+
+Edit `app/questions.py`: `LABELS` holds the reply types (with a `[topic]` placeholder) and `CONTEXTS` holds the situations.
+
+### Run it locally
 
 From the repo root:
 
@@ -26,16 +43,19 @@ streamlit run app/questionnaire.py
 
 Then open http://localhost:8501 in your browser. The app runs only while that terminal is open; press Ctrl+C to stop it.
 
-### Change the questions
+### Deploy (Streamlit Community Cloud)
 
-Edit `app/questions.py`. The style questions, the 10 scenarios and the minimum number of replies all live there.
+1. Sign in at https://share.streamlit.io with GitHub (give it access to this repository only).
+2. **Create app** with repository `Scottch7/LexiconPersonalityBot`, branch `main`, main file `app/questionnaire.py`, and pick an app URL.
+3. Check the app's **Sharing** settings so teammates can open it.
+
+Every push to `main` redeploys the app automatically.
 
 ## Project layout
 
 ```
 app/
   questionnaire.py   Streamlit questionnaire
-  questions.py       Questions and scenarios
-data/responses/      Saved answers (git-ignored)
-.streamlit/          Theme (SJSU colors)
+  questions.py       Labels and situations
+.streamlit/          Theme (SJSU colors) and settings
 ```
