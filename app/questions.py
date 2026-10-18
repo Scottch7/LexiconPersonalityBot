@@ -1,111 +1,79 @@
 """Questionnaire content for the Lexicon Personality Bot.
 
-Edit the lists below to change what the questionnaire asks. The app in
-questionnaire.py reads them; no other code needs to change.
+Each question pairs one LABEL (how to reply) with a random CONTEXT (what you
+are replying to). Edit the lists below to change the questionnaire; the app in
+questionnaire.py reads them and no other code needs to change.
 """
 
-# Section 1: multiple-choice questions about how you usually write.
-# "key" is the field name saved in the JSON answers file.
-STYLE_QUESTIONS = [
-    {
-        "key": "text_length",
-        "label": "How long are your text messages usually?",
-        "options": ["A few words", "One or two sentences", "A short paragraph", "Longer than a paragraph"],
-    },
-    {
-        "key": "tone",
-        "label": "Which best describes your writing tone?",
-        "options": ["Direct and to the point", "Warm and friendly", "Detailed and thorough", "Funny or playful"],
-    },
-    {
-        "key": "emoji_use",
-        "label": "How often do you use emojis?",
-        "options": ["Never", "Sometimes", "Often"],
-    },
-    {
-        "key": "exclamation_use",
-        "label": "How often do you use exclamation points?",
-        "options": ["Rarely", "Sometimes", "A lot!"],
-    },
-    {
-        "key": "capitalization",
-        "label": "How do you capitalize in casual texts?",
-        "options": ["Proper capitalization", "Mostly lowercase", "It depends"],
-    },
-    {
-        "key": "email_greeting",
-        "label": "How do you usually start an email?",
-        "options": ["Hi [name],", "Hey [name],", "Hello [name],", "Dear [name],", "No greeting"],
-    },
-    {
-        "key": "email_signoff",
-        "label": "How do you usually end an email?",
-        "options": ["Thanks,", "Best,", "Cheers,", "Regards,", "No sign-off"],
-    },
-    {
-        "key": "structure",
-        "label": "When you explain something, you usually write...",
-        "options": ["Short bullet points", "Numbered steps", "Paragraphs"],
-    },
+# Reply types. "[topic]" is replaced with the context's topic.
+LABELS = [
+    {"label": "Full Agree", "template": "Agree with this idea about [topic]."},
+    {"label": "Full Disagree", "template": "Disagree with this idea about [topic]."},
+    {"label": "Partial Agree + Modification", "template": "Agree with the idea about [topic], but suggest a small change."},
+    {"label": "5W1H Question", "template": "Ask a what / where / when / how / why question about [topic]."},
+    {"label": "Reverify / Confirm", "template": "Check or confirm something about [topic]."},
+    {"label": "Suggest / Propose", "template": "Suggest an alternative or different plan for [topic]."},
+    {"label": "Elaborate / Expand", "template": "Add more detail or explanation about [topic]."},
+    {"label": "Soften / Hedge", "template": "Respond about [topic] in a polite or softer way."},
+    {"label": "Direct / Blunt", "template": "Respond about [topic] in a short and direct way."},
+    {"label": "Acknowledge", "template": "Give a short acknowledgment about [topic]."},
+    {"label": "Correct / Restate", "template": "Correct or rephrase something about [topic]."},
+    {"label": "Refuse / Decline", "template": "Decline or say no to something about [topic]."},
+    {"label": "Summarize / Condense", "template": "Summarize the idea about [topic] more briefly."},
+    {"label": "Express Emotion", "template": "Respond about [topic] while showing how you feel (happy, annoyed, excited, etc.)."},
 ]
 
-# A 1 to 5 slider question.
-FORMALITY_LABELS = {1: "Very casual", 2: "Casual", 3: "In between", 4: "Formal", 5: "Very formal"}
-
-# Section 2: short scenario replies. Same prompts for everyone, so we can
-# compare how different people answer the same message.
-SCENARIOS = [
+# Everyday situations. "message" is what someone says to you; "topic" fills
+# [topic] in the label's template.
+CONTEXTS = [
     {
-        "key": "scheduling",
-        "title": "Scheduling",
-        "prompt": "\"Can we move our meeting to Thursday?\" Assume Thursday works and you want to suggest 2 p.m.",
+        "name": "Restaurant",
+        "topic": "dinner at the new ramen place",
+        "message": "Hey, want to try the new ramen place downtown Friday at 7? I heard it's really good.",
     },
     {
-        "key": "thank_you",
-        "title": "Thank-you",
-        "prompt": "Someone helped you debug your notebook. How would you thank them?",
+        "name": "Movies",
+        "topic": "the movie night plan",
+        "message": "Let's catch the 9:30 showing of the new sci-fi movie on Saturday. I can buy the tickets.",
     },
     {
-        "key": "polite_refusal",
-        "title": "Polite refusal",
-        "prompt": "\"Can you help with the presentation this weekend?\" Assume you're unavailable.",
+        "name": "Library",
+        "topic": "studying at the library",
+        "message": "Want to study at the library tomorrow from 2 to 6? I booked a room on the third floor.",
     },
     {
-        "key": "clarification",
-        "title": "Asking for clarification",
-        "prompt": "\"Can you update your section?\" Ask which section and what changes are needed.",
+        "name": "Group project",
+        "topic": "the group project plan",
+        "message": "I think we should split the project into five parts and finish our drafts by Sunday night.",
     },
     {
-        "key": "apology",
-        "title": "Apologizing",
-        "prompt": "\"We waited for you at the meeting.\" Assume you forgot the meeting. Apologize and ask what you missed.",
+        "name": "Gym",
+        "topic": "the morning workout plan",
+        "message": "Let's start going to the gym at 6 a.m. on Mondays and Wednesdays.",
     },
     {
-        "key": "progress_update",
-        "title": "Progress update",
-        "prompt": "\"How's your part of the project going?\" Assume your draft is finished, testing remains, and you expect to finish tomorrow.",
+        "name": "Coffee shop",
+        "topic": "meeting at the coffee shop",
+        "message": "Can we meet at the coffee shop near campus at 10 tomorrow to go over the slides?",
     },
     {
-        "key": "reminder",
-        "title": "Sending a reminder",
-        "prompt": "Your teammate said, \"I'll send you my slides later.\" It's now the next day. Remind them that you need the slides by 6 p.m.",
+        "name": "Road trip",
+        "topic": "the weekend road trip",
+        "message": "Road trip to Santa Cruz this Saturday? We'd leave at 8 a.m. and I'll drive.",
     },
     {
-        "key": "offering_help",
-        "title": "Offering help",
-        "prompt": "\"I'm stuck getting the demo to run.\" Assume you have 30 minutes available tonight to help troubleshoot.",
+        "name": "Concert",
+        "topic": "the concert tickets",
+        "message": "Tickets for the concert next month are $85 each. Should we get them before they sell out?",
     },
     {
-        "key": "disagreeing",
-        "title": "Disagreeing respectfully",
-        "prompt": "\"Let's skip testing and just present the demo.\" Explain that you think one quick test is necessary before presenting.",
+        "name": "Birthday party",
+        "topic": "the surprise birthday party",
+        "message": "Let's throw a surprise party for Sam at my place next Friday. Everyone brings a dish.",
     },
     {
-        "key": "encouragement",
-        "title": "Giving encouragement",
-        "prompt": "\"My generated results aren't very good.\" Encourage them and suggest reviewing the results together.",
+        "name": "Exam study session",
+        "topic": "the exam study session",
+        "message": "The midterm is Tuesday. Want to do a study session Sunday night over video call?",
     },
 ]
-
-# Minimum number of scenario replies needed to submit.
-MIN_SCENARIO_REPLIES = 3
