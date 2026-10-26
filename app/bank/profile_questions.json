@@ -1,0 +1,76 @@
+[
+ {
+  "key": "PR1",
+  "q": "How often do you use emoji when texting friends?",
+  "type": "choice",
+  "options": [
+   "never",
+   "sometimes",
+   "often",
+   "almost every message"
+  ]
+ },
+ {
+  "key": "PR2",
+  "q": "Which emoji or emoticons do you use most? (list up to 5)",
+  "type": "text",
+  "options": []
+ },
+ {
+  "key": "PR3",
+  "q": "Do you usually start messages with a capital letter?",
+  "type": "choice",
+  "options": [
+   "almost never",
+   "sometimes",
+   "usually",
+   "always"
+  ]
+ },
+ {
+  "key": "PR4",
+  "q": "Do you end messages with a period?",
+  "type": "choice",
+  "options": [
+   "almost never",
+   "sometimes",
+   "usually",
+   "always"
+  ]
+ },
+ {
+  "key": "PR5",
+  "q": "Slang or abbreviations you use a lot (e.g., lol, ngl, tmrw)",
+  "type": "text",
+  "options": []
+ },
+ {
+  "key": "PR6",
+  "q": "Phrases you would NEVER say in a text",
+  "type": "text",
+  "options": []
+ },
+ {
+  "key": "PR7",
+  "q": "When you have to say no, what do you usually do?",
+  "type": "choice",
+  "options": [
+   "just say no",
+   "say no with a reason",
+   "offer another time",
+   "avoid replying",
+   "joke it off"
+  ]
+ },
+ {
+  "key": "PR8",
+  "q": "Do you send one long message or several short ones in a row?",
+  "type": "choice",
+  "options": [
+   "one long",
+   "a few short",
+   "many short bursts",
+   "depends"
+  ]
+ }
+]

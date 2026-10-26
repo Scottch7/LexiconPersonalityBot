@@ -1,183 +1,270 @@
-"""Lexicon Personality Bot: style questionnaire.
+"""Lexicon Personality Bot: style questionnaire v2.
 
-Each question asks for a specific kind of reply (a label, e.g. "Refuse /
-Decline") in a random everyday situation. Answers are never saved on the
-server: when finished, the person downloads their answers as a CSV.
+Each person answers a fixed plan of chat scenes, "proper" repeats and free prompts
+(from Phil's question bank in app/bank/). One item at a time, no going back.
+Nothing is saved on the server: progress is downloaded as a CSV after every round,
+and uploading that file resumes where the person left off.
 
 Run from the repo root:
     streamlit run app/questionnaire.py
 """
 
-import csv
-import io
-import random
+import html
 import re
-from collections import Counter
+import time
+import uuid
 from datetime import datetime
 
 import streamlit as st
 
-from questions import CONTEXTS, LABELS
+from config import TEAMMATE_NAMES
+from survey_logic import (PILOT, build_items, load_bank, make_row, participants, profile_csv,
+                          read_saved, resume_position, rounds_of, shown_message, to_csv)
 
 SJSU_BLUE = "#0055A2"
 SJSU_GOLD = "#E5A823"
+SENDER_RE = re.compile(r"^([^\s:]{1,20}):\s(.*)$", re.S)
 
-CSV_COLUMNS = ["participant", "submitted_at", "question", "label", "context", "message", "instruction", "response"]
-
-EMOJI_RE = re.compile("[\U0001F300-\U0001FAFF☀-➿]")
-WORD_RE = re.compile(r"[a-z']+")
-STOPWORDS = {
-    "the", "a", "an", "and", "or", "but", "to", "of", "in", "on", "for", "at", "with", "is", "it",
-    "i", "you", "we", "me", "my", "your", "our", "that", "this", "be", "are", "was", "can", "will",
-    "if", "so", "do", "just", "have", "what", "about", "by", "as", "from", "it's", "i'm", "i'll",
-}
+CSS = """
+<style>
+.ctx {font-size:13px; color:#6B7280; margin:4px 0 6px 2px;}
+.sender {font-size:12.5px; font-weight:700; color:#4A5568; margin:0 0 3px 6px;}
+.bubble {display:inline-block; max-width:88%; background:#E9EEF5; color:#1C2B39; padding:10px 14px;
+         border-radius:18px 18px 18px 4px; font-size:16px; line-height:1.35; margin-bottom:6px;}
+.task {background:#FFF6E0; border-left:4px solid #E5A823; padding:10px 14px; border-radius:8px;
+       font-size:16px; margin:4px 0 8px;}
+.reg {font-size:13px; color:#0055A2; font-weight:600; margin-bottom:4px;}
+</style>
+"""
 
 
 def header():
     st.markdown(
         f"""
-        <div style="background:{SJSU_BLUE};padding:28px 32px;border-radius:12px;margin-bottom:12px">
-          <div style="color:{SJSU_GOLD};font-weight:700;font-size:14px;letter-spacing:1px">
-            SJSU · CMPE 259
-          </div>
-          <div style="color:#FFFFFF;font-size:32px;font-weight:700;margin-top:6px">
-            Lexicon Personality Bot
-          </div>
-          <div style="color:#DCE6F2;font-size:17px;margin-top:4px">
-            Style questionnaire: help the bot learn how you write
-          </div>
+        <div style="background:{SJSU_BLUE};padding:22px 26px;border-radius:12px;margin-bottom:10px">
+          <div style="color:{SJSU_GOLD};font-weight:700;font-size:13px;letter-spacing:1px">SJSU · CMPE 259</div>
+          <div style="color:#FFFFFF;font-size:28px;font-weight:700;margin-top:4px">Lexicon Personality Bot</div>
+          <div style="color:#DCE6F2;font-size:16px;margin-top:2px">Style questionnaire v2: reply the way you really text</div>
         </div>
         """,
         unsafe_allow_html=True,
     )
+
+
+def teammate_names():
+    try:
+        names = list(st.secrets["teammate_names"])
+        if names:
+            return names
+    except Exception:
+        pass
+    return TEAMMATE_NAMES
+
+
+def device():
+    try:
+        ua = st.context.headers.get("User-Agent", "")
+    except Exception:
+        return ""
+    return "mobile" if re.search(r"Mobi|Android|iPhone|iPad", ua) else "desktop"
+
+
+def ss():
+    return st.session_state
+
+
+def start_person(bank, person, rows=None):
+    items = build_items(bank, person)
+    rows = rows or []
+    ss().update(person=person, plan_items=items, rows=rows, pos=resume_position(items, rows),
+                session_id=uuid.uuid4().hex[:8], shown_for=None)
+    if ss().pos >= len(items):
+        ss().stage = "finished" if person == PILOT else "profile"
+    else:
+        ss().stage = "item"
+
+
+def file_stub():
+    user = "P1" if ss().person == PILOT else ss().person
+    tag = "pilot" if ss().person == PILOT else "v2"
+    return f"{user}_{tag}_{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+
+
+# ---------------- screens ----------------
+
+def screen_start(bank):
     st.write(
-        f"Takes about 10 minutes. Each of the {len(LABELS)} questions puts you in an everyday situation "
-        "and asks for a certain kind of reply. Write the way you normally would."
+        "You'll see short messages from a group chat and reply the way you'd actually text. "
+        "There are no right answers. The full survey is 10 rounds (about 115 replies), best done in two sittings of about 25 minutes."
     )
-    st.info("Nothing is saved on this site. Your answers stay in your browser until you download them as a CSV.")
+    st.info("Nothing is saved on this site. After each round you download a CSV. Keep it: uploading it later lets you pick up where you left off.")
+
+    new_tab, resume_tab = st.tabs(["Start", "Resume from a saved file"])
+    with new_tab:
+        person = st.radio(
+            "Who is taking it?", participants(bank), index=None, horizontal=True,
+            format_func=lambda p: "Pilot (5 test scenes)" if p == PILOT else p,
+        )
+        if st.button("Start", type="primary", disabled=person is None):
+            start_person(bank, person)
+            st.rerun()
+    with resume_tab:
+        up = st.file_uploader("Upload the last CSV you downloaded from this app", type="csv")
+        if up is not None and st.button("Resume", type="primary"):
+            rows, err = read_saved(up.getvalue(), bank["columns"])
+            if err:
+                st.error(err)
+            elif not rows:
+                st.error("That file has no answers in it yet.")
+            else:
+                pilot = all(r.get("round") == "pilot" for r in rows)
+                person = PILOT if pilot else rows[0]["user_id"]
+                if not pilot and person not in bank["plan"]:
+                    st.error(f"Unknown participant '{person}' in that file.")
+                else:
+                    start_person(bank, person, rows)
+                    st.rerun()
 
 
-def build_questions(seed):
-    """Shuffle the labels and give each one a random context."""
-    rng = random.Random(seed)
-    labels = rng.sample(LABELS, len(LABELS))
-    contexts = []
-    while len(contexts) < len(labels):
-        contexts += rng.sample(CONTEXTS, len(CONTEXTS))
-    return [
-        {
-            "label": label["label"],
-            "context": ctx["name"],
-            "message": ctx["message"],
-            "instruction": label["template"].replace("[topic]", ctx["topic"]),
-        }
-        for label, ctx in zip(labels, contexts)
-    ]
+def screen_item(bank):
+    items, pos = ss().plan_items, ss().pos
+    item = items[pos]
+    rounds = rounds_of(items)
+    rnd_idx = rounds.index(item["round"]) + 1
+    in_round = [i for i, it in enumerate(items) if it["round"] == item["round"]]
+    k = in_round.index(pos) + 1
+
+    if ss().shown_for != pos:  # start the timer when this item first appears
+        ss().shown_for, ss().shown_at = pos, time.time()
+
+    label = "Pilot" if ss().person == PILOT else f"Round {rnd_idx} of {len(rounds)}"
+    st.caption(f"{label} · reply {k} of {len(in_round)}")
+    st.progress(pos / len(items))
+
+    msg, _ = shown_message(bank, item, ss().person, teammate_names())
+    post = bank["post"]
+    is_free = item["type"] == "free"
+
+    if is_free:
+        st.markdown('<div class="reg">Free reply</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="task">{html.escape(msg)}</div>', unsafe_allow_html=True)
+    else:
+        st.markdown(f'<div class="reg">{html.escape(post["instructions"][item["register"]])}</div>', unsafe_allow_html=True)
+        ctx = bank["scenes"][item["id"]]["context"]
+        st.markdown(f'<div class="ctx">{html.escape(ctx)}</div>', unsafe_allow_html=True)
+        m = SENDER_RE.match(msg)
+        sender, text = (m.group(1), m.group(2)) if m else ("", msg)
+        if sender:
+            st.markdown(f'<div class="sender">{html.escape(sender)}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="bubble">{html.escape(text)}</div>', unsafe_allow_html=True)
+
+    with st.form(f"item_{pos}", clear_on_submit=False, border=False):
+        if item["register"] == "survey":
+            reply = st.text_area("Your reply", key=f"reply_{pos}", height=90, placeholder="Write a proper reply...")
+        else:
+            reply = st.text_input("Your reply", key=f"reply_{pos}", placeholder="type it like you'd text it",
+                                  autocomplete="off")
+        abstain = st.checkbox(post["abstain_option"], key=f"abstain_{pos}")
+
+        self_label = None
+        if is_free:
+            fl = post["free_mode_self_label"]
+            self_label = st.selectbox(fl["q"], fl["options"], index=None, placeholder="Pick one", key=f"label_{pos}")
+
+        with st.expander("Optional: 3 quick questions about this reply"):
+            aq = {q["key"]: q for q in post["after_each_answer"]}
+            rating = st.radio(aq["self_rating"]["q"], [1, 2, 3, 4, 5], index=None, horizontal=True, key=f"rate_{pos}")
+            soft = st.radio(aq["softened"]["q"], ["yes", "no"], index=None, horizontal=True, key=f"soft_{pos}")
+            sarc = st.radio(aq["is_sarcastic"]["q"], ["yes", "no"], index=None, horizontal=True, key=f"sarc_{pos}")
+
+        sent = st.form_submit_button("Send", type="primary")
+
+    if sent:
+        if not abstain and not reply.strip():
+            st.error("Type a reply, or tick \"I wouldn't reply\".")
+            return
+        if is_free and not abstain and self_label is None:
+            st.error("Pick which best describes what you did.")
+            return
+        row = make_row(
+            bank, item, pos + 1, ss().person, ss().session_id, teammate_names(), reply, abstain=abstain,
+            self_rating="" if rating is None else str(rating), softened=soft or "", is_sarcastic=sarc or "",
+            self_label=self_label or "", seconds=time.time() - ss().shown_at, device=device(),
+        )
+        ss().rows.append(row)
+        ss().pos = pos + 1
+        end_of_round = ss().pos >= len(items) or items[ss().pos]["round"] != item["round"]
+        if end_of_round:
+            ss().stage = "round_done"
+            ss().finished_round = rnd_idx
+        st.rerun()
 
 
-def slugify(name):
-    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "participant"
+def screen_round_done(bank):
+    items = ss().plan_items
+    rounds = rounds_of(items)
+    last = ss().pos >= len(items)
+    pilot = ss().person == PILOT
+    done_label = "Pilot done!" if pilot else f"Round {ss().finished_round} of {len(rounds)} done!"
+    st.success(done_label + " Download your progress now so nothing is lost.")
+    st.download_button("Download progress (CSV)", data=to_csv(ss().rows, bank["columns"]),
+                       file_name=f"{file_stub()}.csv", mime="text/csv", type="primary", on_click="ignore")
+    st.caption("Each download includes everything so far, so you only need to keep the newest file.")
+
+    if pilot:
+        st.write("Thanks! Send the CSV to Phil.")
+        if st.button("Done"):
+            ss().stage = "finished"
+            st.rerun()
+    elif last:
+        if st.button("Continue to the last few questions"):
+            ss().stage = "profile"
+            st.rerun()
+    else:
+        c1, c2 = st.columns(2)
+        if c1.button(f"Continue to round {ss().finished_round + 1}", type="secondary"):
+            ss().stage = "item"
+            st.rerun()
+        c2.caption("Need a break? Close the page. Next time, choose \"Resume from a saved file\" and upload your newest CSV.")
 
 
-def to_csv(rows):
-    buf = io.StringIO()
-    writer = csv.DictWriter(buf, fieldnames=CSV_COLUMNS)
-    writer.writeheader()
-    writer.writerows(rows)
-    return buf.getvalue().encode("utf-8")
+def screen_profile(bank):
+    st.subheader("Last step: how you usually text")
+    st.caption("8 quick questions, asked once. Skip any you like.")
+    with st.form("profile", border=False):
+        answers = {}
+        for q in bank["profile"]:
+            if q["type"] == "choice":
+                answers[q["key"]] = st.radio(q["q"], q["options"], index=None, key=f"pr_{q['key']}")
+            else:
+                answers[q["key"]] = st.text_input(q["q"], key=f"pr_{q['key']}")
+        if st.form_submit_button("Finish", type="primary"):
+            ss().profile_answers = {k: (v or "") for k, v in answers.items()}
+            ss().stage = "finished"
+            st.rerun()
 
 
-def show_quick_stats(replies):
-    """A first look at the person's style, from their own replies."""
-    all_text = "\n".join(replies)
-    words_per_reply = sum(len(r.split()) for r in replies) / len(replies)
-    words = [w for w in WORD_RE.findall(all_text.lower()) if w not in STOPWORDS and len(w) > 2]
-    top_words = [w for w, _ in Counter(words).most_common(5)]
-
-    st.subheader("A first look at your style")
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Words per reply", f"{words_per_reply:.1f}")
-    col2.metric("Emojis", len(EMOJI_RE.findall(all_text)))
-    col3.metric("Exclamation points", all_text.count("!"))
-    if top_words:
-        st.caption("Your most-used words: " + ", ".join(top_words))
+def screen_finished(bank):
+    rows = ss().rows
+    st.success("All done, thank you! Download your files and send them to Phil.")
+    st.download_button("Download all answers (CSV)", data=to_csv(rows, bank["columns"]),
+                       file_name=f"{file_stub()}.csv", mime="text/csv", type="primary", on_click="ignore")
+    if ss().person != PILOT and "profile_answers" in ss():
+        st.download_button("Download profile answers (CSV)",
+                           data=profile_csv(ss().person, ss().profile_answers, bank["profile"]),
+                           file_name=f"{file_stub()}_profile.csv", mime="text/csv", on_click="ignore")
+    answered = sum(r["abstain"] != "true" for r in rows)
+    st.caption(f"{answered} replies, {len(rows) - answered} skipped with \"I wouldn't reply\".")
 
 
 def main():
     st.set_page_config(page_title="LPB Style Questionnaire", page_icon="✍️", layout="centered")
+    st.markdown(CSS, unsafe_allow_html=True)
     header()
-
-    if "seed" not in st.session_state:
-        st.session_state.seed = random.randrange(1_000_000)
-
-    col1, col2 = st.columns([3, 1])
-    col1.caption("Want different situations? New topics shuffles them (and clears your answers).")
-    if col2.button("New topics"):
-        st.session_state.seed = random.randrange(1_000_000)
-        st.session_state.pop("result", None)
-
-    seed = st.session_state.seed
-    questions = build_questions(seed)
-
-    with st.form("questionnaire"):
-        nickname = st.text_input("Nickname *", help="Used to name your CSV file. A nickname or first name is fine.")
-        st.caption("Short answers are fine: \"got it\" or an emoji counts as a reply.")
-        replies = []
-        for i, q in enumerate(questions, 1):
-            st.markdown(f"**{i}. {q['label']}** · {q['context']}")
-            st.markdown(f"> {q['message']}")
-            st.markdown(f"**Your reply should:** {q['instruction']}")
-            replies.append(st.text_area(
-                f"Reply {i}", key=f"reply_{seed}_{i}", height=80,
-                placeholder="Your reply...", label_visibility="collapsed",
-            ))
-
-        consent = st.checkbox("I agree that my answers can be used for this CMPE 259 class project. *")
-        finished = st.form_submit_button("Finish", type="primary")
-
-    if finished:
-        missing = [str(i) for i, r in enumerate(replies, 1) if not r.strip()]
-        errors = []
-        if not nickname.strip():
-            errors.append("Please enter a nickname.")
-        if missing:
-            errors.append(f"Please answer every question (missing: {', '.join(missing)}).")
-        if not consent:
-            errors.append("Please check the consent box.")
-        if errors:
-            st.session_state.pop("result", None)
-            for e in errors:
-                st.error(e)
-        else:
-            now = datetime.now()
-            rows = [
-                {
-                    "participant": nickname.strip(),
-                    "submitted_at": now.isoformat(timespec="seconds"),
-                    "question": i,
-                    **q,
-                    "response": r.strip(),
-                }
-                for i, (q, r) in enumerate(zip(questions, replies), 1)
-            ]
-            st.session_state.result = {
-                "csv": to_csv(rows),
-                "file_name": f"{slugify(nickname)}_{now.strftime('%Y%m%d-%H%M%S')}.csv",
-                "replies": [r.strip() for r in replies],
-            }
-
-    result = st.session_state.get("result")
-    if result:
-        st.success("All done! Download your answers and send the CSV to the team.")
-        st.download_button(
-            "Download my answers (CSV)",
-            data=result["csv"],
-            file_name=result["file_name"],
-            mime="text/csv",
-            type="primary",
-            on_click="ignore",
-        )
-        show_quick_stats(result["replies"])
+    bank = load_bank()
+    stage = ss().get("stage", "start")
+    {"start": screen_start, "item": screen_item, "round_done": screen_round_done,
+     "profile": screen_profile, "finished": screen_finished}[stage](bank)
 
 
 main()

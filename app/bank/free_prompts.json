@@ -1,0 +1,22 @@
+[
+ {
+  "free_id": "F1",
+  "prompt": "Text the group about something that annoyed you this week."
+ },
+ {
+  "free_id": "F2",
+  "prompt": "Text the group to get a hangout going this weekend."
+ },
+ {
+  "free_id": "F3",
+  "prompt": "Something just happened in the news or online. React to it in the group."
+ },
+ {
+  "free_id": "F4",
+  "prompt": "Text the group about how the project is going, honestly."
+ },
+ {
+  "free_id": "F5",
+  "prompt": "Text one teammate about anything, like you normally would."
+ }
+]
