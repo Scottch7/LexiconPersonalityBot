@@ -1,0 +1,56 @@
+{
+ "instructions": {
+  "chat": "Reply like you'd actually text it on your phone. Don't fix typos or capitalization. There are no right answers.",
+  "survey": "Now answer the same message as a proper, well-written reply."
+ },
+ "abstain_option": "I wouldn't reply to this / I'd ignore it",
+ "after_each_answer": [
+  {
+   "key": "self_rating",
+   "q": "Would you actually send this?",
+   "type": "slider",
+   "min": 1,
+   "max": 5,
+   "optional": true
+  },
+  {
+   "key": "softened",
+   "q": "Did you tone it down compared to what you'd really say?",
+   "type": "yes_no",
+   "optional": true
+  },
+  {
+   "key": "is_sarcastic",
+   "q": "Were you being sarcastic or teasing?",
+   "type": "yes_no",
+   "optional": true
+  }
+ ],
+ "free_mode_self_label": {
+  "key": "self_label",
+  "q": "Which best describes what you did? (pick one)",
+  "options": [
+   "5W1H Question",
+   "Acknowledge",
+   "Complain / Vent",
+   "Correct / Restate",
+   "Direct / Blunt",
+   "Elaborate / Expand",
+   "Express Disappointment",
+   "Express Emotion",
+   "Full Agree",
+   "Full Disagree",
+   "Partial Agree + Modification",
+   "Push Back on Request",
+   "Refuse / Decline",
+   "Reject Idea with Alternative",
+   "Reverify / Confirm",
+   "Sarcasm / Teasing",
+   "Set a Boundary",
+   "Soften / Hedge",
+   "Suggest / Propose",
+   "Summarize / Condense",
+   "none/other"
+  ]
+ }
+}

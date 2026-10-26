@@ -1,0 +1,632 @@
+[
+ {
+  "scene_id": "L01_1",
+  "shown": {
+   "context": "Group chat, project week",
+   "incoming_message": "{TM}: pushed the new eval numbers to the drive"
+  }
+ },
+ {
+  "scene_id": "L01_2",
+  "shown": {
+   "context": "Group chat, evening",
+   "incoming_message": "{TM}: omw, 10 min late sorry"
+  }
+ },
+ {
+  "scene_id": "L01_3",
+  "shown": {
+   "context": "Email-style message from the TA",
+   "incoming_message": "TA: Reminder, the check-in slides are due Thursday 11:59pm."
+  }
+ },
+ {
+  "scene_id": "L01_4",
+  "shown": {
+   "context": "Group chat after a long day",
+   "incoming_message": "{TM}: ok im just gonna book the table for 8, whoever shows shows"
+  }
+ },
+ {
+  "scene_id": "L02_1",
+  "shown": {
+   "context": "Planning the demo",
+   "incoming_message": "{TM}: what if we just demo it live in the notebook instead of slides"
+  }
+ },
+ {
+  "scene_id": "L02_2",
+  "shown": {
+   "context": "Weekend plans",
+   "incoming_message": "{TM}: tacos saturday?"
+  }
+ },
+ {
+  "scene_id": "L02_3",
+  "shown": {
+   "context": "Late night before deadline",
+   "incoming_message": "{TM}: honestly lets just stop here and finish tomorrow morning"
+  }
+ },
+ {
+  "scene_id": "L02_4",
+  "shown": {
+   "context": "Your professor, after class",
+   "incoming_message": "Prof: Could your team present first on Thursday instead of last?"
+  }
+ },
+ {
+  "scene_id": "L03_1",
+  "shown": {
+   "context": "Splitting work",
+   "incoming_message": "{TM}: I'll do slides 5-8 and you take the whole benchmark section"
+  }
+ },
+ {
+  "scene_id": "L03_2",
+  "shown": {
+   "context": "Trip planning",
+   "incoming_message": "{TM}: lets drive to tahoe friday night and come back sunday"
+  }
+ },
+ {
+  "scene_id": "L03_3",
+  "shown": {
+   "context": "Model choice",
+   "incoming_message": "{TM}: we should switch everything to the bigger model, the small one is kinda bad"
+  }
+ },
+ {
+  "scene_id": "L03_4",
+  "shown": {
+   "context": "Ordering food for the group",
+   "incoming_message": "{TM}: getting 3 large pizzas for 5 of us, all pepperoni"
+  }
+ },
+ {
+  "scene_id": "L04_1",
+  "shown": {
+   "context": "Results discussion",
+   "incoming_message": "{TM}: the classifier is basically perfect, we dont need more test data"
+  }
+ },
+ {
+  "scene_id": "L04_2",
+  "shown": {
+   "context": "Planning the check-in, the night before",
+   "incoming_message": "{TM}: we can just submit the check-in without the error analysis, nobody reads it"
+  }
+ },
+ {
+  "scene_id": "L04_3",
+  "shown": {
+   "context": "Group chat, right after the demo crashed. You tested your part twice.",
+   "incoming_message": "{TM}: the demo broke because someone didnt test their part"
+  }
+ },
+ {
+  "scene_id": "L04_4",
+  "shown": {
+   "context": "Talking about the data",
+   "incoming_message": "{TM}: 10 chat messages is plenty to model someone's style"
+  }
+ },
+ {
+  "scene_id": "L04_5",
+  "shown": {
+   "context": "Your professor, in office hours",
+   "incoming_message": "Prof: I think you can skip the held-out test, the in-sample numbers are enough."
+  }
+ },
+ {
+  "scene_id": "L05_1",
+  "shown": {
+   "context": "Invitation",
+   "incoming_message": "{TM}: party at my place friday, you in??"
+  }
+ },
+ {
+  "scene_id": "L05_2",
+  "shown": {
+   "context": "Your section is already done and you like it.",
+   "incoming_message": "{TM}: want me to rewrite your section so it matches mine?"
+  }
+ },
+ {
+  "scene_id": "L05_3",
+  "shown": {
+   "context": "Offer",
+   "incoming_message": "{TM}: want the rest of my fries"
+  }
+ },
+ {
+  "scene_id": "L05_4",
+  "shown": {
+   "context": "Extra opportunity",
+   "incoming_message": "Manager: Want to join the weekend hackathon team? It's optional."
+  }
+ },
+ {
+  "scene_id": "L05_5",
+  "shown": {
+   "context": "Group chat. You don't feel like going.",
+   "incoming_message": "{TM}: cmon you said no last time too, just come for an hour"
+  }
+ },
+ {
+  "scene_id": "L06_1",
+  "shown": {
+   "context": "Stuck on a bug",
+   "incoming_message": "{TM}: the notebook keeps crashing when the agent loop runs more than 10 steps"
+  }
+ },
+ {
+  "scene_id": "L06_2",
+  "shown": {
+   "context": "Weekend",
+   "incoming_message": "{TM}: im so bored, what should we do this weekend"
+  }
+ },
+ {
+  "scene_id": "L06_3",
+  "shown": {
+   "context": "Budget",
+   "incoming_message": "{TM}: we only have like $3 of API budget left"
+  }
+ },
+ {
+  "scene_id": "L06_4",
+  "shown": {
+   "context": "Dinner",
+   "incoming_message": "{TM}: idk where to eat"
+  }
+ },
+ {
+  "scene_id": "L07_1",
+  "shown": {
+   "context": "Group chat. You know the report is actually due this Wednesday.",
+   "incoming_message": "{TM}: report is due next friday right"
+  }
+ },
+ {
+  "scene_id": "L07_2",
+  "shown": {
+   "context": "Watching the game later. You know it starts at 8, on ESPN.",
+   "incoming_message": "{TM}: the game starts at 7 on channel 4"
+  }
+ },
+ {
+  "scene_id": "L07_3",
+  "shown": {
+   "context": "Looking at results. The copy rate was actually 3%.",
+   "incoming_message": "{TM}: so the bot copied phrases in like half the replies"
+  }
+ },
+ {
+  "scene_id": "L07_4",
+  "shown": {
+   "context": "TA misunderstanding",
+   "incoming_message": "TA: So your team is fine-tuning on the raw group chat, correct?"
+  }
+ },
+ {
+  "scene_id": "L07_5",
+  "shown": {
+   "context": "After dinner. You all agreed to split the bill evenly.",
+   "incoming_message": "{TM}: so we said everyone pays their own at dinner right"
+  }
+ },
+ {
+  "scene_id": "L08_1",
+  "shown": {
+   "context": "Meeting time",
+   "incoming_message": "{TM}: meeting moved to 4"
+  }
+ },
+ {
+  "scene_id": "L08_2",
+  "shown": {
+   "context": "Plans",
+   "incoming_message": "{TM}: ok so we're doing the concert sunday"
+  }
+ },
+ {
+  "scene_id": "L08_3",
+  "shown": {
+   "context": "Handoff",
+   "incoming_message": "{TM}: I deleted the old dataset folder, we're using v3 now"
+  }
+ },
+ {
+  "scene_id": "L08_4",
+  "shown": {
+   "context": "Instruction",
+   "incoming_message": "Manager: Please send the summary to the whole client list today."
+  }
+ },
+ {
+  "scene_id": "L09_1",
+  "shown": {
+   "context": "Vague update",
+   "incoming_message": "{TM}: I changed some stuff in the pipeline"
+  }
+ },
+ {
+  "scene_id": "L09_2",
+  "shown": {
+   "context": "News",
+   "incoming_message": "{TM}: GUESS WHAT HAPPENED TODAY"
+  }
+ },
+ {
+  "scene_id": "L09_3",
+  "shown": {
+   "context": "New tool",
+   "incoming_message": "{TM}: we should use LM Studio for the routine stuff"
+  }
+ },
+ {
+  "scene_id": "L09_4",
+  "shown": {
+   "context": "Recommendation",
+   "incoming_message": "{TM}: found a really good ramen place"
+  }
+ },
+ {
+  "scene_id": "L10_1",
+  "shown": {
+   "context": "Asked about your part",
+   "incoming_message": "{TM}: wait how does your copy check actually work"
+  }
+ },
+ {
+  "scene_id": "L10_2",
+  "shown": {
+   "context": "Catching up",
+   "incoming_message": "{TM}: how was your trip??"
+  }
+ },
+ {
+  "scene_id": "L10_3",
+  "shown": {
+   "context": "Defending a choice",
+   "incoming_message": "{TM}: why did you pick TF-IDF over embeddings"
+  }
+ },
+ {
+  "scene_id": "L10_4",
+  "shown": {
+   "context": "Professor asks",
+   "incoming_message": "Prof: Can you explain why you held one person out at a time?"
+  }
+ },
+ {
+  "scene_id": "L11_1",
+  "shown": {
+   "context": "Missed a long thread",
+   "incoming_message": "{TM}: I just woke up and there's 60 messages, what did we decide"
+  }
+ },
+ {
+  "scene_id": "L11_2",
+  "shown": {
+   "context": "Recap request",
+   "incoming_message": "{TM}: so what happened at the meeting with the landlord"
+  }
+ },
+ {
+  "scene_id": "L11_3",
+  "shown": {
+   "context": "Before a presentation",
+   "incoming_message": "{TM}: give me the one line version of our results for the intro"
+  }
+ },
+ {
+  "scene_id": "L11_4",
+  "shown": {
+   "context": "Status ask",
+   "incoming_message": "Manager: Quick status on the project? One or two lines is fine."
+  }
+ },
+ {
+  "scene_id": "L12_1",
+  "shown": {
+   "context": "Their slides: text is tiny and two slides have typos.",
+   "incoming_message": "{TM}: finished my slides! thoughts?"
+  }
+ },
+ {
+  "scene_id": "L12_2",
+  "shown": {
+   "context": "Their plan seems risky",
+   "incoming_message": "{TM}: thinking about dropping a class to focus on my startup"
+  }
+ },
+ {
+  "scene_id": "L12_3",
+  "shown": {
+   "context": "You're not sure; the runs keep failing.",
+   "incoming_message": "{TM}: will the fine-tune be done by thursday?"
+  }
+ },
+ {
+  "scene_id": "L12_4",
+  "shown": {
+   "context": "You tried it. It's pretty dry.",
+   "incoming_message": "{TM}: made my first lasagna, how is it"
+  }
+ },
+ {
+  "scene_id": "L13_1",
+  "shown": {
+   "context": "Missed deadline again",
+   "incoming_message": "{TM}: sorry didnt get to my part again, maybe tonight"
+  }
+ },
+ {
+  "scene_id": "L13_2",
+  "shown": {
+   "context": "Getting ready to go out. The shirt really doesn't fit.",
+   "incoming_message": "{TM}: be honest does this shirt look bad"
+  }
+ },
+ {
+  "scene_id": "L13_3",
+  "shown": {
+   "context": "Group chat. The last 1,000 GPT-4o rows all sounded the same.",
+   "incoming_message": "{TM}: what if we generate 50k more rows with gpt-4o"
+  }
+ },
+ {
+  "scene_id": "L13_4",
+  "shown": {
+   "context": "Lateness",
+   "incoming_message": "{TM}: ill be there at 7 for sure this time"
+  }
+ },
+ {
+  "scene_id": "L13_5",
+  "shown": {
+   "context": "Unrealistic deadline",
+   "incoming_message": "Manager: Can you have the full report done by tomorrow morning?"
+  }
+ },
+ {
+  "scene_id": "L14_1",
+  "shown": {
+   "context": "Good result",
+   "incoming_message": "{TM}: WE GOT 92% ON THE HELD-OUT PERSON"
+  }
+ },
+ {
+  "scene_id": "L14_2",
+  "shown": {
+   "context": "Bad news",
+   "incoming_message": "{TM}: my dog has to have surgery next week"
+  }
+ },
+ {
+  "scene_id": "L14_3",
+  "shown": {
+   "context": "Lost work",
+   "incoming_message": "{TM}: colab crashed and I lost 2 hours of runs"
+  }
+ },
+ {
+  "scene_id": "L14_4",
+  "shown": {
+   "context": "Surprise",
+   "incoming_message": "{TM}: they're bringing back the old menu at the boba place"
+  }
+ },
+ {
+  "scene_id": "L15_1",
+  "shown": {
+   "context": "Your day so far: missed the bus and bombed a quiz.",
+   "incoming_message": "{TM}: how's your day going"
+  }
+ },
+ {
+  "scene_id": "L15_2",
+  "shown": {
+   "context": "You have 3 midterms this week.",
+   "incoming_message": "{TM}: how are you holding up with midterms"
+  }
+ },
+ {
+  "scene_id": "L15_3",
+  "shown": {
+   "context": "Shared annoyance",
+   "incoming_message": "{TM}: parking on campus today was insane"
+  }
+ },
+ {
+  "scene_id": "L15_4",
+  "shown": {
+   "context": "Tool frustration",
+   "incoming_message": "{TM}: has the API been slow for you too"
+  }
+ },
+ {
+  "scene_id": "L15_5",
+  "shown": {
+   "context": "The new rotation has woken you up twice this week.",
+   "incoming_message": "Manager: How's the new on-call rotation working for you?"
+  }
+ },
+ {
+  "scene_id": "L16_1",
+  "shown": {
+   "context": "Their plan",
+   "incoming_message": "{TM}: lets present everything as one big table, way faster"
+  }
+ },
+ {
+  "scene_id": "L16_2",
+  "shown": {
+   "context": "Hangout plan",
+   "incoming_message": "{TM}: movie at 10pm tonight?"
+  }
+ },
+ {
+  "scene_id": "L16_3",
+  "shown": {
+   "context": "Method choice",
+   "incoming_message": "{TM}: we can skip the classifier and just ask GPT who wrote it"
+  }
+ },
+ {
+  "scene_id": "L16_4",
+  "shown": {
+   "context": "Food",
+   "incoming_message": "{TM}: sushi again?"
+  }
+ },
+ {
+  "scene_id": "L16_5",
+  "shown": {
+   "context": "TA suggestion",
+   "incoming_message": "TA: You could just drop the negative labels if the data is too thin."
+  }
+ },
+ {
+  "scene_id": "L17_1",
+  "shown": {
+   "context": "Extra work dumped on you",
+   "incoming_message": "{TM}: can you also take the slides tonight? I'm swamped"
+  }
+ },
+ {
+  "scene_id": "L17_2",
+  "shown": {
+   "context": "Favor",
+   "incoming_message": "{TM}: can you drive me to the airport at 5am tmrw"
+  }
+ },
+ {
+  "scene_id": "L17_3",
+  "shown": {
+   "context": "You already did the whole analysis.",
+   "incoming_message": "{TM}: can you write the whole report since you did the analysis"
+  }
+ },
+ {
+  "scene_id": "L17_4",
+  "shown": {
+   "context": "Small favor, again",
+   "incoming_message": "{TM}: can i borrow your charger again lol"
+  }
+ },
+ {
+  "scene_id": "L17_5",
+  "shown": {
+   "context": "Your manager, at your part-time job. The deadline is already tight.",
+   "incoming_message": "Manager: Can you also add a dashboard to this? Same deadline."
+  }
+ },
+ {
+  "scene_id": "L18_1",
+  "shown": {
+   "context": "The meeting was the one where you were all splitting the work.",
+   "incoming_message": "{TM}: sorry I couldnt make the meeting, overslept"
+  }
+ },
+ {
+  "scene_id": "L18_2",
+  "shown": {
+   "context": "Cancelled plans",
+   "incoming_message": "{TM}: hey gonna have to bail on tonight, something came up"
+  }
+ },
+ {
+  "scene_id": "L18_3",
+  "shown": {
+   "context": "Bad result",
+   "incoming_message": "{TM}: rerun is back, accuracy dropped to 61%"
+  }
+ },
+ {
+  "scene_id": "L18_4",
+  "shown": {
+   "context": "You'd been wanting to try it for months.",
+   "incoming_message": "{TM}: the restaurant you wanted is closed for good"
+  }
+ },
+ {
+  "scene_id": "L18_5",
+  "shown": {
+   "context": "Grade",
+   "incoming_message": "TA: Your check-in got a B-, mostly for missing the error analysis."
+  }
+ },
+ {
+  "scene_id": "L19_1",
+  "shown": {
+   "context": "Late-night messages",
+   "incoming_message": "{TM}: you up? need help with the notebook (sent 1:40am)"
+  }
+ },
+ {
+  "scene_id": "L19_2",
+  "shown": {
+   "context": "You've said no the last three weekends and you're tired.",
+   "incoming_message": "{TM}: you NEED to come out tonight, no excuses this time"
+  }
+ },
+ {
+  "scene_id": "L19_3",
+  "shown": {
+   "context": "Using your account",
+   "incoming_message": "{TM}: can I just use your API key for my runs, mine's out"
+  }
+ },
+ {
+  "scene_id": "L19_4",
+  "shown": {
+   "context": "Ongoing joke went too far",
+   "incoming_message": "{TM}: lol remember when you fell in front of everyone, im telling the new guy"
+  }
+ },
+ {
+  "scene_id": "L19_5",
+  "shown": {
+   "context": "Weekend work",
+   "incoming_message": "Manager: I'll probably need you to check messages over the weekend from now on."
+  }
+ },
+ {
+  "scene_id": "L20_1",
+  "shown": {
+   "context": "Late again",
+   "incoming_message": "{TM}: running a bit late, 20 min"
+  }
+ },
+ {
+  "scene_id": "L20_2",
+  "shown": {
+   "context": "Group chat. They pushed a fix an hour ago.",
+   "incoming_message": "{TM}: my code has zero bugs btw"
+  }
+ },
+ {
+  "scene_id": "L20_3",
+  "shown": {
+   "context": "Obvious news",
+   "incoming_message": "{TM}: guys i think it might rain today (it's pouring)"
+  }
+ },
+ {
+  "scene_id": "L20_4",
+  "shown": {
+   "context": "They said this for the last two reports too.",
+   "incoming_message": "{TM}: I'll start the report early this time I promise"
+  }
+ },
+ {
+  "scene_id": "L20_5",
+  "shown": {
+   "context": "Bad pun",
+   "incoming_message": "{TM}: why did the dataset break up with the model? too many issues"
+  }
+ }
+]

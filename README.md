@@ -1,34 +1,25 @@
 # Lexicon Personality Bot
 
-CMPE 259 (SJSU). A bot that learns how a person writes (their go-to words, phrases, tone and structure) and drafts new text in their voice.
+CMPE 259 (SJSU). A personalized writing agent that learns how one person writes and drafts chat replies in their voice, using personalized RAG and human feedback.
 
-## Style questionnaire
+## Style questionnaire v2
 
-A Streamlit form where each question asks for a specific kind of reply (a **label**, e.g. "Refuse / Decline" or "Acknowledge") in a random everyday situation (a **context**, e.g. a restaurant plan or a group project).
+A Streamlit app that collects each focus person's replies to a fixed plan of group-chat messages, from the question bank in `app/bank/`.
 
-- Every label is asked once, in a shuffled order, each with a random context.
-- **New topics** reshuffles the situations (and clears the answers).
-- Short replies count: "got it" or an emoji is a valid answer.
-- **Nothing is saved on the server.** When finished, the person downloads their answers as a CSV and sends it to the team.
+- **Who:** pick **P1**, **P2** or **Pilot** (5 test scenes) on the start screen. No names appear on the site.
+- **What:** 10 rounds, 115 items: 90 chat scenes (20 reply types), 20 "proper" repeats of earlier scenes and 5 free prompts, then 8 profile questions. Best done in two sittings of about 25 minutes.
+- **How it feels:** one message at a time in a chat bubble, one reply box, an "I wouldn't reply" option and 3 optional follow-up questions. No going back to earlier answers.
+- **Nothing is saved on the server.** After every round the person downloads a CSV of everything so far. To continue later, choose **Resume from a saved file** and upload the newest CSV.
+- **Exact text:** replies are saved exactly as typed (no trimming or case changes), with seconds to answer.
 
-### CSV format
+### Output files
 
-One row per question:
+- **Answers CSV:** one row per item, using the columns in `app/bank/response_schema.csv`. `target_label` and `split` are left empty on purpose; they are filled in later by joining on `scene_id`. `edited_count` is empty because Streamlit cannot count backspaces.
+- **Profile CSV:** one row per person with the 8 texting-habit answers.
 
-| Column | Meaning |
-| --- | --- |
-| `participant` | Nickname the person entered |
-| `submitted_at` | When they finished |
-| `question` | Question number (1 = first shown) |
-| `label` | Reply type, e.g. `Refuse / Decline` |
-| `context` | Situation, e.g. `Restaurant` |
-| `message` | What was said to them |
-| `instruction` | What their reply should do |
-| `response` | Their reply |
+### Settings
 
-### Change the labels or situations
-
-Edit `app/questions.py`: `LABELS` holds the reply types (with a `[topic]` placeholder) and `CONTEXTS` holds the situations.
+`app/config.py` holds the teammate names that fill `{TM}` in messages, the pilot scenes and who each participant is (so nobody sees their own name). Names can also be set in Streamlit secrets as `teammate_names = [...]`.
 
 ### Run it locally
 
@@ -45,17 +36,18 @@ Then open http://localhost:8501 in your browser. The app runs only while that te
 
 ### Deploy (Streamlit Community Cloud)
 
-1. Sign in at https://share.streamlit.io with GitHub (give it access to this repository only).
-2. **Create app** with repository `Scottch7/LexiconPersonalityBot`, branch `main`, main file `app/questionnaire.py`, and pick an app URL.
-3. Check the app's **Sharing** settings so teammates can open it.
-
-Every push to `main` redeploys the app automatically.
+The app is deployed from branch `main`, main file `app/questionnaire.py`. Every push to `main` redeploys it automatically.
 
 ## Project layout
 
 ```
 app/
-  questionnaire.py   Streamlit questionnaire
-  questions.py       Labels and situations
+  questionnaire.py   Streamlit screens (v2)
+  survey_logic.py    Item order, output rows, CSV save and resume
+  config.py          Teammate names, pilot scenes, participants
+  bank/              Question bank (blind version: no labels or test split)
+data/
+  seeds/             Questionnaire v1 answers
+  generated/         Generated datasets
 .streamlit/          Theme (SJSU colors) and settings
 ```

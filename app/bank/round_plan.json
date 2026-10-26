@@ -1,0 +1,1256 @@
+{
+ "P1": [
+  {
+   "round": 1,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L20_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L01_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L11_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_1",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L07_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L11_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_5",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 3,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L18_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L01_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L09_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_2",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 4,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L09_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L10_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_1",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 5,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L16_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L10_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_1",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 6,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L11_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L14_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L09_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_4",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 7,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L01_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L14_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L10_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L09_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L01_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L11_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L14_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L10_3",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 8,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L14_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L16_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L06_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L13_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L08_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L01_1",
+     "register": "survey"
+    }
+   ]
+  },
+  {
+   "round": 9,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L04_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L14_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L03_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L12_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L17_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L10_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L07_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L15_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L11_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L19_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L09_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L05_1",
+     "register": "survey"
+    }
+   ]
+  },
+  {
+   "round": 10,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L20_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L18_1",
+     "register": "survey"
+    },
+    {
+     "type": "free",
+     "id": "F1",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F2",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F3",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F4",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F5",
+     "register": "chat"
+    }
+   ]
+  }
+ ],
+ "P2": [
+  {
+   "round": 1,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L19_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L14_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L01_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_4",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L10_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_5",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 3,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L19_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L07_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L20_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_4",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 4,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L16_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L14_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L09_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_3",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 5,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L07_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L04_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L13_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L01_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L15_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L05_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L19_5",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L17_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L18_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L16_4",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 6,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L09_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L10_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L10_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_4",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 7,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L11_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L11_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L09_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L02_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L12_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L06_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L11_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L11_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L01_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L14_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L14_1",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L10_1",
+     "register": "chat"
+    }
+   ]
+  },
+  {
+   "round": 8,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L01_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L03_2",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L09_3",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L08_4",
+     "register": "chat"
+    },
+    {
+     "type": "scene",
+     "id": "L11_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L13_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L02_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L07_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L01_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L16_1",
+     "register": "survey"
+    }
+   ]
+  },
+  {
+   "round": 9,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L04_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L06_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L15_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L10_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L12_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L18_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L17_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L08_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L05_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L03_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L19_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L20_1",
+     "register": "survey"
+    }
+   ]
+  },
+  {
+   "round": 10,
+   "items": [
+    {
+     "type": "scene",
+     "id": "L09_1",
+     "register": "survey"
+    },
+    {
+     "type": "scene",
+     "id": "L14_1",
+     "register": "survey"
+    },
+    {
+     "type": "free",
+     "id": "F1",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F2",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F3",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F4",
+     "register": "chat"
+    },
+    {
+     "type": "free",
+     "id": "F5",
+     "register": "chat"
+    }
+   ]
+  }
+ ]
+}
