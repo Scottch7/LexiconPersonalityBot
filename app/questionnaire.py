@@ -17,13 +17,14 @@ from datetime import datetime
 
 import streamlit as st
 
-from config import TEAMMATE_NAMES
-from survey_logic import (PILOT, build_items, load_bank, make_row, participants, profile_csv,
-                          read_saved, resume_position, rounds_of, shown_message, to_csv)
+from config import BREAK_AFTER_ROUND, BREAK_MINUTES, PROPER_MIN_WORDS, TEAMMATE_NAMES
+from survey_logic import (PILOT, break_minutes_left, build_items, load_bank, make_row, participants,
+                          profile_csv, read_saved, resume_position, rounds_of, shown_message, to_csv)
 
 SJSU_BLUE = "#0055A2"
 SJSU_GOLD = "#E5A823"
 SENDER_RE = re.compile(r"^([^\s:]{1,20}):\s(.*)$", re.S)
+RATING_LABELS = {1: "1 No way", 2: "2", 3: "3 Maybe", 4: "4", 5: "5 Yes"}
 
 CSS = """
 <style>
@@ -34,6 +35,8 @@ CSS = """
 .task {background:#FFF6E0; border-left:4px solid #E5A823; padding:10px 14px; border-radius:8px;
        font-size:16px; margin:4px 0 8px;}
 .reg {font-size:13px; color:#0055A2; font-weight:600; margin-bottom:4px;}
+.proper {background:#0055A2; color:#FFFFFF; padding:10px 14px; border-radius:8px; font-size:15px;
+         font-weight:600; margin:2px 0 10px;}
 </style>
 """
 
@@ -73,13 +76,23 @@ def ss():
     return st.session_state
 
 
+def at_break(items, pos):
+    """True when pos is the first item after the halfway-break round."""
+    if pos <= 0 or pos >= len(items) or items[pos]["round"] == items[pos - 1]["round"]:
+        return False
+    return rounds_of(items).index(items[pos - 1]["round"]) + 1 == BREAK_AFTER_ROUND
+
+
 def start_person(bank, person, rows=None):
     items = build_items(bank, person)
     rows = rows or []
-    ss().update(person=person, plan_items=items, rows=rows, pos=resume_position(items, rows),
+    pos = resume_position(items, rows)
+    ss().update(person=person, plan_items=items, rows=rows, pos=pos,
                 session_id=uuid.uuid4().hex[:8], shown_for=None)
-    if ss().pos >= len(items):
+    if pos >= len(items):
         ss().stage = "finished" if person == PILOT else "profile"
+    elif at_break(items, pos) and break_minutes_left(rows, BREAK_MINUTES):
+        ss().stage, ss().finished_round = "round_done", BREAK_AFTER_ROUND
     else:
         ss().stage = "item"
 
@@ -126,9 +139,25 @@ def screen_start(bank):
                     st.rerun()
 
 
+def screen_part2_intro():
+    st.subheader("Part 2: proper replies")
+    st.write(
+        "Nice work, the texting part is done. For the rest of the survey you'll see messages you already answered. "
+        "This time, write each reply as a **proper, well-written message**, like an email to a professor or a message at work."
+    )
+    st.markdown("- Full sentences\n- Correct spelling, capitals and punctuation\n- No slang or abbreviations")
+    st.caption("Short texts like \"sure\" or \"yesss\" don't count here. Same 3 quick questions after each reply.")
+    if st.button("Got it, start Part 2", type="primary"):
+        ss().part2_seen = True
+        st.rerun()
+
+
 def screen_item(bank):
     items, pos = ss().plan_items, ss().pos
     item = items[pos]
+    if item["register"] == "survey" and not ss().get("part2_seen"):
+        screen_part2_intro()
+        return
     rounds = rounds_of(items)
     rnd_idx = rounds.index(item["round"]) + 1
     in_round = [i for i, it in enumerate(items) if it["round"] == item["round"]]
@@ -149,7 +178,11 @@ def screen_item(bank):
         st.markdown('<div class="reg">Free reply</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="task">{html.escape(msg)}</div>', unsafe_allow_html=True)
     else:
-        st.markdown(f'<div class="reg">{html.escape(post["instructions"][item["register"]])}</div>', unsafe_allow_html=True)
+        if item["register"] == "survey":
+            st.markdown('<div class="proper">Part 2 · Proper reply: full sentences, correct spelling and punctuation</div>',
+                        unsafe_allow_html=True)
+        else:
+            st.markdown(f'<div class="reg">{html.escape(post["instructions"]["chat"])}</div>', unsafe_allow_html=True)
         ctx = bank["scenes"][item["id"]]["context"]
         st.markdown(f'<div class="ctx">{html.escape(ctx)}</div>', unsafe_allow_html=True)
         m = SENDER_RE.match(msg)
@@ -171,21 +204,34 @@ def screen_item(bank):
             fl = post["free_mode_self_label"]
             self_label = st.selectbox(fl["q"], fl["options"], index=None, placeholder="Pick one", key=f"label_{pos}")
 
-        with st.expander("Optional: 3 quick questions about this reply"):
-            aq = {q["key"]: q for q in post["after_each_answer"]}
-            rating = st.radio(aq["self_rating"]["q"], [1, 2, 3, 4, 5], index=None, horizontal=True, key=f"rate_{pos}")
-            soft = st.radio(aq["softened"]["q"], ["yes", "no"], index=None, horizontal=True, key=f"soft_{pos}")
-            sarc = st.radio(aq["is_sarcastic"]["q"], ["yes", "no"], index=None, horizontal=True, key=f"sarc_{pos}")
+        st.markdown("**3 quick questions about your reply**")
+        st.caption("Required, unless you ticked \"I wouldn't reply\".")
+        aq = {q["key"]: q for q in post["after_each_answer"]}
+        rating = st.radio(f'{aq["self_rating"]["q"]} (1 = no way, 5 = yes, exactly as written)', [1, 2, 3, 4, 5],
+                          index=None, horizontal=True, key=f"rate_{pos}", format_func=RATING_LABELS.get)
+        soft = st.radio(aq["softened"]["q"], ["yes", "no"], index=None, horizontal=True, key=f"soft_{pos}")
+        sarc = st.radio(aq["is_sarcastic"]["q"], ["yes", "no"], index=None, horizontal=True, key=f"sarc_{pos}")
 
+        err = st.empty()
         sent = st.form_submit_button("Send", type="primary")
 
     if sent:
-        if not abstain and not reply.strip():
-            st.error("Type a reply, or tick \"I wouldn't reply\".")
-            return
-        if is_free and not abstain and self_label is None:
-            st.error("Pick which best describes what you did.")
-            return
+        if not abstain:
+            if not reply.strip():
+                err.error("Type a reply, or tick \"I wouldn't reply\".")
+                return
+            missing = [name for name, val in [("which best describes what you did", self_label if is_free else ""),
+                                              ("would you send it", rating), ("did you tone it down", soft),
+                                              ("sarcastic or teasing", sarc)] if val is None]
+            if missing:
+                err.error("Please answer: " + ", ".join(missing) + ".")
+                return
+            if (item["register"] == "survey" and len(reply.split()) < PROPER_MIN_WORDS
+                    and ss().get("short_ok") != pos):
+                ss().short_ok = pos
+                err.warning("That's short for a proper reply. Try writing it as a full, polished message. "
+                            "To keep it as is, press Send again.")
+                return
         row = make_row(
             bank, item, pos + 1, ss().person, ss().session_id, teammate_names(), reply, abstain=abstain,
             self_rating="" if rating is None else str(rating), softened=soft or "", is_sarcastic=sarc or "",
@@ -221,16 +267,28 @@ def screen_round_done(bank):
             ss().stage = "profile"
             st.rerun()
     else:
+        nxt = ss().finished_round + 1
+        halfway = ss().finished_round == BREAK_AFTER_ROUND
+        if halfway and BREAK_MINUTES:
+            st.info(f"Halfway there! Take a break of at least {BREAK_MINUTES} minutes before round {nxt}. "
+                    "Stretch, get some water: rested answers are better data.")
+        elif halfway:
+            st.info("Halfway there! This is a good time for a break.")
         c1, c2 = st.columns(2)
-        if c1.button(f"Continue to round {ss().finished_round + 1}", type="secondary"):
-            ss().stage = "item"
-            st.rerun()
+        go = c1.button(f"Continue to round {nxt}", type="secondary")
         c2.caption("Need a break? Close the page. Next time, choose \"Resume from a saved file\" and upload your newest CSV.")
+        if go:
+            left = break_minutes_left(ss().rows, BREAK_MINUTES) if halfway else 0
+            if left:
+                st.warning(f"Break isn't over yet. Come back in about {left} minute{'s' if left > 1 else ''}.")
+            else:
+                ss().stage = "item"
+                st.rerun()
 
 
 def screen_profile(bank):
     st.subheader("Last step: how you usually text")
-    st.caption("8 quick questions, asked once. Skip any you like.")
+    st.caption("8 quick questions, asked once. All are required; if one doesn't apply to you, write \"none\".")
     with st.form("profile", border=False):
         answers = {}
         for q in bank["profile"]:
@@ -238,8 +296,12 @@ def screen_profile(bank):
                 answers[q["key"]] = st.radio(q["q"], q["options"], index=None, key=f"pr_{q['key']}")
             else:
                 answers[q["key"]] = st.text_input(q["q"], key=f"pr_{q['key']}")
+        err = st.empty()
         if st.form_submit_button("Finish", type="primary"):
-            ss().profile_answers = {k: (v or "") for k, v in answers.items()}
+            if any(v is None or not str(v).strip() for v in answers.values()):
+                err.error("Please answer all 8 questions.")
+                return
+            ss().profile_answers = answers
             ss().stage = "finished"
             st.rerun()
 
