@@ -4,6 +4,7 @@ making output rows and resuming from a saved CSV. No Streamlit code here."""
 import csv
 import io
 import json
+import math
 import random
 from datetime import datetime
 from pathlib import Path
@@ -77,9 +78,12 @@ def item_key(item_type, item_id, register):
 
 def make_row(bank, item, order, person, session_id, names, response, abstain=False,
              self_rating="", softened="", is_sarcastic="", self_label="", seconds=None, device=""):
-    """One output row. The response is saved exactly as typed (no strip, no case changes)."""
+    """One output row. The response is saved exactly as typed (no strip, no case changes).
+    A skipped item ("I wouldn't reply") keeps no reply, follow-ups or self label."""
     msg, tm = shown_message(bank, item, person, names)
     is_free = item["type"] == "free"
+    if abstain:
+        response = self_rating = softened = is_sarcastic = self_label = ""
     row = {c: "" for c in bank["columns"]}
     row.update({
         "user_id": "P1" if person == PILOT else person,
@@ -94,7 +98,7 @@ def make_row(bank, item, order, person, session_id, names, response, abstain=Fal
         "split": "",          # chosen at random after collection
         "shown_message": msg,
         "teammate_filled": tm,
-        "response": "" if abstain else response,
+        "response": response,
         "abstain": "true" if abstain else "false",
         "self_rating": self_rating,
         "softened": softened,
@@ -141,6 +145,19 @@ def resume_position(items, rows):
         if item_key(it["type"], it["id"], it["register"]) not in done:
             return i
     return len(items)
+
+
+def break_minutes_left(rows, minutes, now=None):
+    """Minutes of the halfway break still to wait, counted from the last saved answer.
+    A timestamp in the future (CSV saved on a machine with another clock) counts as a finished break."""
+    if not rows or minutes <= 0:
+        return 0
+    try:
+        last = datetime.fromisoformat(rows[-1]["timestamp"])
+    except (KeyError, ValueError):
+        return 0
+    waited = ((now or datetime.now()) - last).total_seconds() / 60
+    return 0 if waited < 0 else max(0, math.ceil(minutes - waited))
 
 
 def profile_csv(person, answers, profile_questions):
