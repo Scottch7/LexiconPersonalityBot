@@ -15,7 +15,17 @@ import time
 import uuid
 from datetime import datetime
 
+import importlib
+
 import streamlit as st
+
+import config
+import survey_logic
+
+# Streamlit Cloud can keep old copies of these modules after a redeploy, which shows up
+# as an ImportError mid-survey. Reloading them on every run keeps them in sync with this file.
+importlib.reload(config)
+importlib.reload(survey_logic)
 
 from config import BREAK_AFTER_ROUND, BREAK_MINUTES, PROPER_MIN_WORDS, TEAMMATE_NAMES
 from survey_logic import (PILOT, break_minutes_left, build_items, load_bank, make_row, participants,
