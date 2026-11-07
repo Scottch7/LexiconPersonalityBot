@@ -1,0 +1,401 @@
+user_id,row_id,label,pair,raw,guarded
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,B vs A,x,x
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,C vs A,x,x
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,E vs A,x,tie
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,C vs B,y,y
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,E vs C,x,tie
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,B vs A,tie,tie
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,C vs A,x,tie
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,E vs A,x,x
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,C vs B,tie,tie
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,E vs C,tie,tie
+P1,P1_scene_L19_5_chat,Set a Boundary,B vs A,x,x
+P1,P1_scene_L19_5_chat,Set a Boundary,C vs A,x,x
+P1,P1_scene_L19_5_chat,Set a Boundary,E vs A,x,x
+P1,P1_scene_L19_5_chat,Set a Boundary,C vs B,tie,tie
+P1,P1_scene_L19_5_chat,Set a Boundary,E vs C,tie,tie
+P1,P1_scene_L15_1_chat,Complain / Vent,B vs A,y,y
+P1,P1_scene_L15_1_chat,Complain / Vent,C vs A,y,y
+P1,P1_scene_L15_1_chat,Complain / Vent,E vs A,y,y
+P1,P1_scene_L15_1_chat,Complain / Vent,C vs B,tie,tie
+P1,P1_scene_L15_1_chat,Complain / Vent,E vs C,x,x
+P1,P1_scene_L13_1_chat,Direct / Blunt,B vs A,x,x
+P1,P1_scene_L13_1_chat,Direct / Blunt,C vs A,x,x
+P1,P1_scene_L13_1_chat,Direct / Blunt,E vs A,x,x
+P1,P1_scene_L13_1_chat,Direct / Blunt,C vs B,x,x
+P1,P1_scene_L13_1_chat,Direct / Blunt,E vs C,tie,tie
+P1,P1_scene_L19_3_chat,Set a Boundary,B vs A,tie,tie
+P1,P1_scene_L19_3_chat,Set a Boundary,C vs A,tie,tie
+P1,P1_scene_L19_3_chat,Set a Boundary,E vs A,tie,tie
+P1,P1_scene_L19_3_chat,Set a Boundary,C vs B,tie,tie
+P1,P1_scene_L19_3_chat,Set a Boundary,E vs C,x,x
+P1,P1_scene_L11_3_chat,Summarize / Condense,B vs A,x,x
+P1,P1_scene_L11_3_chat,Summarize / Condense,C vs A,x,x
+P1,P1_scene_L11_3_chat,Summarize / Condense,E vs A,x,tie
+P1,P1_scene_L11_3_chat,Summarize / Condense,C vs B,y,y
+P1,P1_scene_L11_3_chat,Summarize / Condense,E vs C,tie,tie
+P1,P1_scene_L15_5_chat,Complain / Vent,B vs A,x,x
+P1,P1_scene_L15_5_chat,Complain / Vent,C vs A,x,x
+P1,P1_scene_L15_5_chat,Complain / Vent,E vs A,x,x
+P1,P1_scene_L15_5_chat,Complain / Vent,C vs B,y,y
+P1,P1_scene_L15_5_chat,Complain / Vent,E vs C,tie,tie
+P1,P1_scene_L05_2_chat,Refuse / Decline,B vs A,x,x
+P1,P1_scene_L05_2_chat,Refuse / Decline,C vs A,x,x
+P1,P1_scene_L05_2_chat,Refuse / Decline,E vs A,x,x
+P1,P1_scene_L05_2_chat,Refuse / Decline,C vs B,tie,tie
+P1,P1_scene_L05_2_chat,Refuse / Decline,E vs C,tie,tie
+P1,P1_scene_L18_2_chat,Express Disappointment,B vs A,tie,tie
+P1,P1_scene_L18_2_chat,Express Disappointment,C vs A,tie,tie
+P1,P1_scene_L18_2_chat,Express Disappointment,E vs A,tie,tie
+P1,P1_scene_L18_2_chat,Express Disappointment,C vs B,tie,tie
+P1,P1_scene_L18_2_chat,Express Disappointment,E vs C,tie,tie
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,B vs A,x,x
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,C vs A,x,x
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,E vs A,x,x
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,C vs B,tie,tie
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,E vs C,tie,tie
+P1,P1_scene_L07_1_chat,Correct / Restate,B vs A,x,x
+P1,P1_scene_L07_1_chat,Correct / Restate,C vs A,x,x
+P1,P1_scene_L07_1_chat,Correct / Restate,E vs A,x,x
+P1,P1_scene_L07_1_chat,Correct / Restate,C vs B,tie,tie
+P1,P1_scene_L07_1_chat,Correct / Restate,E vs C,tie,tie
+P1,P1_scene_L09_3_chat,5W1H Question,B vs A,x,x
+P1,P1_scene_L09_3_chat,5W1H Question,C vs A,x,x
+P1,P1_scene_L09_3_chat,5W1H Question,E vs A,x,x
+P1,P1_scene_L09_3_chat,5W1H Question,C vs B,tie,tie
+P1,P1_scene_L09_3_chat,5W1H Question,E vs C,x,x
+P1,P1_scene_L04_4_chat,Full Disagree,B vs A,x,x
+P1,P1_scene_L04_4_chat,Full Disagree,C vs A,x,x
+P1,P1_scene_L04_4_chat,Full Disagree,E vs A,x,x
+P1,P1_scene_L04_4_chat,Full Disagree,C vs B,tie,tie
+P1,P1_scene_L04_4_chat,Full Disagree,E vs C,tie,tie
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,B vs A,x,x
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,C vs A,x,x
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,E vs A,x,x
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,C vs B,y,y
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,E vs C,x,x
+P1,P1_scene_L10_4_chat,Elaborate / Expand,B vs A,x,tie
+P1,P1_scene_L10_4_chat,Elaborate / Expand,C vs A,x,tie
+P1,P1_scene_L10_4_chat,Elaborate / Expand,E vs A,x,tie
+P1,P1_scene_L10_4_chat,Elaborate / Expand,C vs B,x,tie
+P1,P1_scene_L10_4_chat,Elaborate / Expand,E vs C,tie,tie
+P1,P1_scene_L05_4_chat,Refuse / Decline,B vs A,x,x
+P1,P1_scene_L05_4_chat,Refuse / Decline,C vs A,x,x
+P1,P1_scene_L05_4_chat,Refuse / Decline,E vs A,x,x
+P1,P1_scene_L05_4_chat,Refuse / Decline,C vs B,tie,tie
+P1,P1_scene_L05_4_chat,Refuse / Decline,E vs C,tie,tie
+P1,P1_scene_L17_4_chat,Push Back on Request,B vs A,tie,tie
+P1,P1_scene_L17_4_chat,Push Back on Request,C vs A,tie,tie
+P1,P1_scene_L17_4_chat,Push Back on Request,E vs A,tie,tie
+P1,P1_scene_L17_4_chat,Push Back on Request,C vs B,y,y
+P1,P1_scene_L17_4_chat,Push Back on Request,E vs C,x,x
+P1,P1_scene_L04_5_chat,Full Disagree,B vs A,x,x
+P1,P1_scene_L04_5_chat,Full Disagree,C vs A,x,x
+P1,P1_scene_L04_5_chat,Full Disagree,E vs A,x,x
+P1,P1_scene_L04_5_chat,Full Disagree,C vs B,x,x
+P1,P1_scene_L04_5_chat,Full Disagree,E vs C,x,x
+P1,P1_scene_L07_4_chat,Correct / Restate,B vs A,x,x
+P1,P1_scene_L07_4_chat,Correct / Restate,C vs A,x,x
+P1,P1_scene_L07_4_chat,Correct / Restate,E vs A,x,x
+P1,P1_scene_L07_4_chat,Correct / Restate,C vs B,x,x
+P1,P1_scene_L07_4_chat,Correct / Restate,E vs C,y,y
+P1,P1_scene_L17_1_chat,Push Back on Request,B vs A,x,x
+P1,P1_scene_L17_1_chat,Push Back on Request,C vs A,tie,tie
+P1,P1_scene_L17_1_chat,Push Back on Request,E vs A,tie,tie
+P1,P1_scene_L17_1_chat,Push Back on Request,C vs B,tie,tie
+P1,P1_scene_L17_1_chat,Push Back on Request,E vs C,tie,tie
+P1,P1_scene_L13_5_chat,Direct / Blunt,B vs A,x,tie
+P1,P1_scene_L13_5_chat,Direct / Blunt,C vs A,x,tie
+P1,P1_scene_L13_5_chat,Direct / Blunt,E vs A,x,tie
+P1,P1_scene_L13_5_chat,Direct / Blunt,C vs B,x,tie
+P1,P1_scene_L13_5_chat,Direct / Blunt,E vs C,tie,tie
+P1,P1_scene_L18_5_chat,Express Disappointment,B vs A,x,x
+P1,P1_scene_L18_5_chat,Express Disappointment,C vs A,x,x
+P1,P1_scene_L18_5_chat,Express Disappointment,E vs A,x,tie
+P1,P1_scene_L18_5_chat,Express Disappointment,C vs B,x,x
+P1,P1_scene_L18_5_chat,Express Disappointment,E vs C,tie,tie
+P1,P1_scene_L10_2_chat,Elaborate / Expand,B vs A,x,x
+P1,P1_scene_L10_2_chat,Elaborate / Expand,C vs A,x,x
+P1,P1_scene_L10_2_chat,Elaborate / Expand,E vs A,x,x
+P1,P1_scene_L10_2_chat,Elaborate / Expand,C vs B,x,x
+P1,P1_scene_L10_2_chat,Elaborate / Expand,E vs C,x,x
+P1,P1_scene_L06_1_chat,Suggest / Propose,B vs A,tie,tie
+P1,P1_scene_L06_1_chat,Suggest / Propose,C vs A,x,x
+P1,P1_scene_L06_1_chat,Suggest / Propose,E vs A,x,x
+P1,P1_scene_L06_1_chat,Suggest / Propose,C vs B,tie,tie
+P1,P1_scene_L06_1_chat,Suggest / Propose,E vs C,tie,tie
+P1,P1_scene_L06_2_chat,Suggest / Propose,B vs A,tie,tie
+P1,P1_scene_L06_2_chat,Suggest / Propose,C vs A,x,x
+P1,P1_scene_L06_2_chat,Suggest / Propose,E vs A,tie,tie
+P1,P1_scene_L06_2_chat,Suggest / Propose,C vs B,x,x
+P1,P1_scene_L06_2_chat,Suggest / Propose,E vs C,y,y
+P1,P1_scene_L12_1_chat,Soften / Hedge,B vs A,x,x
+P1,P1_scene_L12_1_chat,Soften / Hedge,C vs A,x,tie
+P1,P1_scene_L12_1_chat,Soften / Hedge,E vs A,x,x
+P1,P1_scene_L12_1_chat,Soften / Hedge,C vs B,x,tie
+P1,P1_scene_L12_1_chat,Soften / Hedge,E vs C,y,tie
+P1,P1_scene_L14_1_chat,Express Emotion,B vs A,x,x
+P1,P1_scene_L14_1_chat,Express Emotion,C vs A,x,x
+P1,P1_scene_L14_1_chat,Express Emotion,E vs A,x,x
+P1,P1_scene_L14_1_chat,Express Emotion,C vs B,x,x
+P1,P1_scene_L14_1_chat,Express Emotion,E vs C,tie,tie
+P1,P1_scene_L12_2_chat,Soften / Hedge,B vs A,x,tie
+P1,P1_scene_L12_2_chat,Soften / Hedge,C vs A,x,tie
+P1,P1_scene_L12_2_chat,Soften / Hedge,E vs A,x,tie
+P1,P1_scene_L12_2_chat,Soften / Hedge,C vs B,tie,tie
+P1,P1_scene_L12_2_chat,Soften / Hedge,E vs C,tie,tie
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,B vs A,x,x
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,C vs A,x,x
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,E vs A,x,x
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,C vs B,y,y
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,E vs C,x,x
+P1,P1_scene_L01_2_chat,Acknowledge,B vs A,x,x
+P1,P1_scene_L01_2_chat,Acknowledge,C vs A,x,x
+P1,P1_scene_L01_2_chat,Acknowledge,E vs A,x,x
+P1,P1_scene_L01_2_chat,Acknowledge,C vs B,y,y
+P1,P1_scene_L01_2_chat,Acknowledge,E vs C,y,y
+P1,P1_scene_L09_1_chat,5W1H Question,B vs A,x,x
+P1,P1_scene_L09_1_chat,5W1H Question,C vs A,x,x
+P1,P1_scene_L09_1_chat,5W1H Question,E vs A,x,x
+P1,P1_scene_L09_1_chat,5W1H Question,C vs B,x,x
+P1,P1_scene_L09_1_chat,5W1H Question,E vs C,y,y
+P1,P1_scene_L01_3_chat,Acknowledge,B vs A,x,tie
+P1,P1_scene_L01_3_chat,Acknowledge,C vs A,x,x
+P1,P1_scene_L01_3_chat,Acknowledge,E vs A,x,x
+P1,P1_scene_L01_3_chat,Acknowledge,C vs B,x,x
+P1,P1_scene_L01_3_chat,Acknowledge,E vs C,y,y
+P1,P1_scene_L02_1_chat,Full Agree,B vs A,x,x
+P1,P1_scene_L02_1_chat,Full Agree,C vs A,x,x
+P1,P1_scene_L02_1_chat,Full Agree,E vs A,x,x
+P1,P1_scene_L02_1_chat,Full Agree,C vs B,tie,tie
+P1,P1_scene_L02_1_chat,Full Agree,E vs C,tie,tie
+P1,P1_scene_L02_2_chat,Full Agree,B vs A,x,x
+P1,P1_scene_L02_2_chat,Full Agree,C vs A,x,x
+P1,P1_scene_L02_2_chat,Full Agree,E vs A,x,x
+P1,P1_scene_L02_2_chat,Full Agree,C vs B,tie,tie
+P1,P1_scene_L02_2_chat,Full Agree,E vs C,tie,tie
+P1,P1_scene_L11_2_chat,Summarize / Condense,B vs A,x,tie
+P1,P1_scene_L11_2_chat,Summarize / Condense,C vs A,x,tie
+P1,P1_scene_L11_2_chat,Summarize / Condense,E vs A,x,tie
+P1,P1_scene_L11_2_chat,Summarize / Condense,C vs B,x,tie
+P1,P1_scene_L11_2_chat,Summarize / Condense,E vs C,x,tie
+P1,P1_scene_L08_3_chat,Reverify / Confirm,B vs A,x,x
+P1,P1_scene_L08_3_chat,Reverify / Confirm,C vs A,x,tie
+P1,P1_scene_L08_3_chat,Reverify / Confirm,E vs A,x,x
+P1,P1_scene_L08_3_chat,Reverify / Confirm,C vs B,x,tie
+P1,P1_scene_L08_3_chat,Reverify / Confirm,E vs C,y,tie
+P1,P1_scene_L14_3_chat,Express Emotion,B vs A,x,tie
+P1,P1_scene_L14_3_chat,Express Emotion,C vs A,x,tie
+P1,P1_scene_L14_3_chat,Express Emotion,E vs A,x,x
+P1,P1_scene_L14_3_chat,Express Emotion,C vs B,x,tie
+P1,P1_scene_L14_3_chat,Express Emotion,E vs C,x,x
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,B vs A,tie,tie
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,C vs A,tie,tie
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,E vs A,tie,tie
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,C vs B,tie,tie
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,E vs C,tie,tie
+P1,P1_scene_L08_4_chat,Reverify / Confirm,B vs A,x,tie
+P1,P1_scene_L08_4_chat,Reverify / Confirm,C vs A,x,x
+P1,P1_scene_L08_4_chat,Reverify / Confirm,E vs A,x,x
+P1,P1_scene_L08_4_chat,Reverify / Confirm,C vs B,tie,tie
+P1,P1_scene_L08_4_chat,Reverify / Confirm,E vs C,y,y
+P2,P2_scene_L14_3_chat,Express Emotion,B vs A,x,tie
+P2,P2_scene_L14_3_chat,Express Emotion,C vs A,x,x
+P2,P2_scene_L14_3_chat,Express Emotion,E vs A,x,x
+P2,P2_scene_L14_3_chat,Express Emotion,C vs B,y,tie
+P2,P2_scene_L14_3_chat,Express Emotion,E vs C,x,x
+P2,P2_scene_L13_1_chat,Direct / Blunt,B vs A,tie,tie
+P2,P2_scene_L13_1_chat,Direct / Blunt,C vs A,tie,tie
+P2,P2_scene_L13_1_chat,Direct / Blunt,E vs A,tie,tie
+P2,P2_scene_L13_1_chat,Direct / Blunt,C vs B,tie,tie
+P2,P2_scene_L13_1_chat,Direct / Blunt,E vs C,y,y
+P2,P2_scene_L15_5_chat,Complain / Vent,B vs A,y,y
+P2,P2_scene_L15_5_chat,Complain / Vent,C vs A,y,y
+P2,P2_scene_L15_5_chat,Complain / Vent,E vs A,y,y
+P2,P2_scene_L15_5_chat,Complain / Vent,C vs B,tie,tie
+P2,P2_scene_L15_5_chat,Complain / Vent,E vs C,tie,tie
+P2,P2_scene_L18_2_chat,Express Disappointment,B vs A,tie,tie
+P2,P2_scene_L18_2_chat,Express Disappointment,C vs A,x,x
+P2,P2_scene_L18_2_chat,Express Disappointment,E vs A,tie,tie
+P2,P2_scene_L18_2_chat,Express Disappointment,C vs B,x,x
+P2,P2_scene_L18_2_chat,Express Disappointment,E vs C,tie,tie
+P2,P2_scene_L07_4_chat,Correct / Restate,B vs A,x,x
+P2,P2_scene_L07_4_chat,Correct / Restate,C vs A,x,x
+P2,P2_scene_L07_4_chat,Correct / Restate,E vs A,x,x
+P2,P2_scene_L07_4_chat,Correct / Restate,C vs B,x,x
+P2,P2_scene_L07_4_chat,Correct / Restate,E vs C,y,y
+P2,P2_scene_L06_1_chat,Suggest / Propose,B vs A,x,x
+P2,P2_scene_L06_1_chat,Suggest / Propose,C vs A,x,x
+P2,P2_scene_L06_1_chat,Suggest / Propose,E vs A,x,x
+P2,P2_scene_L06_1_chat,Suggest / Propose,C vs B,tie,tie
+P2,P2_scene_L06_1_chat,Suggest / Propose,E vs C,x,x
+P2,P2_scene_L18_5_chat,Express Disappointment,B vs A,x,x
+P2,P2_scene_L18_5_chat,Express Disappointment,C vs A,x,x
+P2,P2_scene_L18_5_chat,Express Disappointment,E vs A,x,x
+P2,P2_scene_L18_5_chat,Express Disappointment,C vs B,x,x
+P2,P2_scene_L18_5_chat,Express Disappointment,E vs C,y,y
+P2,P2_scene_L04_5_chat,Full Disagree,B vs A,x,x
+P2,P2_scene_L04_5_chat,Full Disagree,C vs A,tie,tie
+P2,P2_scene_L04_5_chat,Full Disagree,E vs A,x,x
+P2,P2_scene_L04_5_chat,Full Disagree,C vs B,tie,tie
+P2,P2_scene_L04_5_chat,Full Disagree,E vs C,tie,tie
+P2,P2_scene_L13_5_chat,Direct / Blunt,B vs A,x,tie
+P2,P2_scene_L13_5_chat,Direct / Blunt,C vs A,x,tie
+P2,P2_scene_L13_5_chat,Direct / Blunt,E vs A,x,x
+P2,P2_scene_L13_5_chat,Direct / Blunt,C vs B,y,tie
+P2,P2_scene_L13_5_chat,Direct / Blunt,E vs C,x,x
+P2,P2_scene_L04_4_chat,Full Disagree,B vs A,x,x
+P2,P2_scene_L04_4_chat,Full Disagree,C vs A,x,x
+P2,P2_scene_L04_4_chat,Full Disagree,E vs A,x,x
+P2,P2_scene_L04_4_chat,Full Disagree,C vs B,x,x
+P2,P2_scene_L04_4_chat,Full Disagree,E vs C,tie,tie
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,B vs A,x,x
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,C vs A,tie,tie
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,E vs A,x,x
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,C vs B,tie,tie
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,E vs C,tie,tie
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,B vs A,tie,tie
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,C vs A,tie,tie
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,E vs A,y,y
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,C vs B,tie,tie
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,E vs C,x,x
+P2,P2_scene_L19_4_chat,Set a Boundary,B vs A,x,x
+P2,P2_scene_L19_4_chat,Set a Boundary,C vs A,tie,tie
+P2,P2_scene_L19_4_chat,Set a Boundary,E vs A,tie,tie
+P2,P2_scene_L19_4_chat,Set a Boundary,C vs B,tie,tie
+P2,P2_scene_L19_4_chat,Set a Boundary,E vs C,tie,tie
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,B vs A,tie,tie
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,C vs A,tie,tie
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,E vs A,y,y
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,C vs B,tie,tie
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,E vs C,y,y
+P2,P2_scene_L05_4_chat,Refuse / Decline,B vs A,x,x
+P2,P2_scene_L05_4_chat,Refuse / Decline,C vs A,x,x
+P2,P2_scene_L05_4_chat,Refuse / Decline,E vs A,tie,tie
+P2,P2_scene_L05_4_chat,Refuse / Decline,C vs B,tie,tie
+P2,P2_scene_L05_4_chat,Refuse / Decline,E vs C,y,y
+P2,P2_scene_L17_4_chat,Push Back on Request,B vs A,tie,tie
+P2,P2_scene_L17_4_chat,Push Back on Request,C vs A,tie,tie
+P2,P2_scene_L17_4_chat,Push Back on Request,E vs A,tie,tie
+P2,P2_scene_L17_4_chat,Push Back on Request,C vs B,tie,tie
+P2,P2_scene_L17_4_chat,Push Back on Request,E vs C,tie,tie
+P2,P2_scene_L09_1_chat,5W1H Question,B vs A,tie,tie
+P2,P2_scene_L09_1_chat,5W1H Question,C vs A,tie,tie
+P2,P2_scene_L09_1_chat,5W1H Question,E vs A,tie,tie
+P2,P2_scene_L09_1_chat,5W1H Question,C vs B,tie,tie
+P2,P2_scene_L09_1_chat,5W1H Question,E vs C,tie,tie
+P2,P2_scene_L07_1_chat,Correct / Restate,B vs A,tie,tie
+P2,P2_scene_L07_1_chat,Correct / Restate,C vs A,tie,tie
+P2,P2_scene_L07_1_chat,Correct / Restate,E vs A,tie,tie
+P2,P2_scene_L07_1_chat,Correct / Restate,C vs B,tie,tie
+P2,P2_scene_L07_1_chat,Correct / Restate,E vs C,tie,tie
+P2,P2_scene_L01_3_chat,Acknowledge,B vs A,tie,tie
+P2,P2_scene_L01_3_chat,Acknowledge,C vs A,tie,tie
+P2,P2_scene_L01_3_chat,Acknowledge,E vs A,tie,tie
+P2,P2_scene_L01_3_chat,Acknowledge,C vs B,tie,tie
+P2,P2_scene_L01_3_chat,Acknowledge,E vs C,tie,tie
+P2,P2_scene_L15_1_chat,Complain / Vent,B vs A,tie,tie
+P2,P2_scene_L15_1_chat,Complain / Vent,C vs A,tie,tie
+P2,P2_scene_L15_1_chat,Complain / Vent,E vs A,tie,tie
+P2,P2_scene_L15_1_chat,Complain / Vent,C vs B,tie,tie
+P2,P2_scene_L15_1_chat,Complain / Vent,E vs C,y,y
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,B vs A,tie,tie
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,C vs A,y,y
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,E vs A,tie,tie
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,C vs B,y,y
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,E vs C,x,x
+P2,P2_scene_L05_2_chat,Refuse / Decline,B vs A,tie,tie
+P2,P2_scene_L05_2_chat,Refuse / Decline,C vs A,tie,tie
+P2,P2_scene_L05_2_chat,Refuse / Decline,E vs A,tie,tie
+P2,P2_scene_L05_2_chat,Refuse / Decline,C vs B,tie,tie
+P2,P2_scene_L05_2_chat,Refuse / Decline,E vs C,tie,tie
+P2,P2_scene_L19_5_chat,Set a Boundary,B vs A,tie,tie
+P2,P2_scene_L19_5_chat,Set a Boundary,C vs A,tie,tie
+P2,P2_scene_L19_5_chat,Set a Boundary,E vs A,tie,tie
+P2,P2_scene_L19_5_chat,Set a Boundary,C vs B,tie,tie
+P2,P2_scene_L19_5_chat,Set a Boundary,E vs C,x,x
+P2,P2_scene_L17_1_chat,Push Back on Request,B vs A,tie,tie
+P2,P2_scene_L17_1_chat,Push Back on Request,C vs A,x,x
+P2,P2_scene_L17_1_chat,Push Back on Request,E vs A,x,x
+P2,P2_scene_L17_1_chat,Push Back on Request,C vs B,tie,tie
+P2,P2_scene_L17_1_chat,Push Back on Request,E vs C,x,x
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,B vs A,x,x
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,C vs A,x,x
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,E vs A,x,x
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,C vs B,tie,tie
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,E vs C,x,x
+P2,P2_scene_L06_2_chat,Suggest / Propose,B vs A,tie,tie
+P2,P2_scene_L06_2_chat,Suggest / Propose,C vs A,tie,tie
+P2,P2_scene_L06_2_chat,Suggest / Propose,E vs A,tie,tie
+P2,P2_scene_L06_2_chat,Suggest / Propose,C vs B,tie,tie
+P2,P2_scene_L06_2_chat,Suggest / Propose,E vs C,tie,tie
+P2,P2_scene_L10_2_chat,Elaborate / Expand,B vs A,tie,tie
+P2,P2_scene_L10_2_chat,Elaborate / Expand,C vs A,tie,tie
+P2,P2_scene_L10_2_chat,Elaborate / Expand,E vs A,tie,tie
+P2,P2_scene_L10_2_chat,Elaborate / Expand,C vs B,tie,tie
+P2,P2_scene_L10_2_chat,Elaborate / Expand,E vs C,y,y
+P2,P2_scene_L02_1_chat,Full Agree,B vs A,tie,tie
+P2,P2_scene_L02_1_chat,Full Agree,C vs A,tie,tie
+P2,P2_scene_L02_1_chat,Full Agree,E vs A,tie,tie
+P2,P2_scene_L02_1_chat,Full Agree,C vs B,tie,tie
+P2,P2_scene_L02_1_chat,Full Agree,E vs C,tie,tie
+P2,P2_scene_L10_4_chat,Elaborate / Expand,B vs A,x,x
+P2,P2_scene_L10_4_chat,Elaborate / Expand,C vs A,x,x
+P2,P2_scene_L10_4_chat,Elaborate / Expand,E vs A,x,x
+P2,P2_scene_L10_4_chat,Elaborate / Expand,C vs B,x,x
+P2,P2_scene_L10_4_chat,Elaborate / Expand,E vs C,tie,tie
+P2,P2_scene_L12_2_chat,Soften / Hedge,B vs A,x,x
+P2,P2_scene_L12_2_chat,Soften / Hedge,C vs A,x,x
+P2,P2_scene_L12_2_chat,Soften / Hedge,E vs A,x,x
+P2,P2_scene_L12_2_chat,Soften / Hedge,C vs B,x,x
+P2,P2_scene_L12_2_chat,Soften / Hedge,E vs C,tie,tie
+P2,P2_scene_L11_2_chat,Summarize / Condense,B vs A,x,tie
+P2,P2_scene_L11_2_chat,Summarize / Condense,C vs A,x,tie
+P2,P2_scene_L11_2_chat,Summarize / Condense,E vs A,x,tie
+P2,P2_scene_L11_2_chat,Summarize / Condense,C vs B,x,tie
+P2,P2_scene_L11_2_chat,Summarize / Condense,E vs C,y,tie
+P2,P2_scene_L02_2_chat,Full Agree,B vs A,x,x
+P2,P2_scene_L02_2_chat,Full Agree,C vs A,x,x
+P2,P2_scene_L02_2_chat,Full Agree,E vs A,x,x
+P2,P2_scene_L02_2_chat,Full Agree,C vs B,tie,tie
+P2,P2_scene_L02_2_chat,Full Agree,E vs C,tie,tie
+P2,P2_scene_L12_1_chat,Soften / Hedge,B vs A,x,tie
+P2,P2_scene_L12_1_chat,Soften / Hedge,C vs A,x,x
+P2,P2_scene_L12_1_chat,Soften / Hedge,E vs A,x,x
+P2,P2_scene_L12_1_chat,Soften / Hedge,C vs B,y,tie
+P2,P2_scene_L12_1_chat,Soften / Hedge,E vs C,x,x
+P2,P2_scene_L11_3_chat,Summarize / Condense,B vs A,x,x
+P2,P2_scene_L11_3_chat,Summarize / Condense,C vs A,tie,tie
+P2,P2_scene_L11_3_chat,Summarize / Condense,E vs A,tie,tie
+P2,P2_scene_L11_3_chat,Summarize / Condense,C vs B,tie,tie
+P2,P2_scene_L11_3_chat,Summarize / Condense,E vs C,y,tie
+P2,P2_scene_L01_2_chat,Acknowledge,B vs A,y,y
+P2,P2_scene_L01_2_chat,Acknowledge,C vs A,y,y
+P2,P2_scene_L01_2_chat,Acknowledge,E vs A,y,y
+P2,P2_scene_L01_2_chat,Acknowledge,C vs B,tie,tie
+P2,P2_scene_L01_2_chat,Acknowledge,E vs C,tie,tie
+P2,P2_scene_L14_1_chat,Express Emotion,B vs A,x,x
+P2,P2_scene_L14_1_chat,Express Emotion,C vs A,x,x
+P2,P2_scene_L14_1_chat,Express Emotion,E vs A,x,x
+P2,P2_scene_L14_1_chat,Express Emotion,C vs B,tie,tie
+P2,P2_scene_L14_1_chat,Express Emotion,E vs C,tie,tie
+P2,P2_scene_L08_3_chat,Reverify / Confirm,B vs A,tie,tie
+P2,P2_scene_L08_3_chat,Reverify / Confirm,C vs A,x,x
+P2,P2_scene_L08_3_chat,Reverify / Confirm,E vs A,tie,tie
+P2,P2_scene_L08_3_chat,Reverify / Confirm,C vs B,tie,tie
+P2,P2_scene_L08_3_chat,Reverify / Confirm,E vs C,tie,tie
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,B vs A,tie,tie
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,C vs A,tie,tie
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,E vs A,tie,tie
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,C vs B,tie,tie
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,E vs C,tie,tie
+P2,P2_scene_L09_3_chat,5W1H Question,B vs A,y,y
+P2,P2_scene_L09_3_chat,5W1H Question,C vs A,tie,tie
+P2,P2_scene_L09_3_chat,5W1H Question,E vs A,y,y
+P2,P2_scene_L09_3_chat,5W1H Question,C vs B,x,x
+P2,P2_scene_L09_3_chat,5W1H Question,E vs C,y,y
+P2,P2_scene_L08_4_chat,Reverify / Confirm,B vs A,x,x
+P2,P2_scene_L08_4_chat,Reverify / Confirm,C vs A,x,x
+P2,P2_scene_L08_4_chat,Reverify / Confirm,E vs A,x,x
+P2,P2_scene_L08_4_chat,Reverify / Confirm,C vs B,x,x
+P2,P2_scene_L08_4_chat,Reverify / Confirm,E vs C,y,y
