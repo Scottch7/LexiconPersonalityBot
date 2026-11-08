@@ -14,6 +14,7 @@ Implements generation_prompt_and_judge_rubric.md:
 from __future__ import annotations
 
 import json
+import math
 import random
 import re
 import statistics
@@ -305,3 +306,81 @@ CONDITIONS = {
     "D_verified": dict(card=True, k=3, pool="survey+gpt_verified", filter=True),
     "E_styledistance": dict(card=True, k=3, pool="survey", retriever="styledistance"),
 }
+
+
+# ---------------------------------------------------------------- style judge v2 (forced choice + probability)
+# Why v2: v1 (3 references, JSON "A"|"B"|"tie", win only if both orders agree) abstained on 22% of
+# calibration pairs. v2 changes three things, fixed before looking at any v2 result:
+#   1. evidence: the style card plus up to 8 reference replies instead of 2-3,
+#   2. forced choice: the judge must answer one letter, A or B; no tie option,
+#   3. probability: we read P(A) from token logprobs and average over both orders, which cancels
+#      position bias instead of turning every order disagreement into a tie.
+# A pair is a tie only if the order-averaged probability is within TIE_BAND of 0.5 (a true coin flip).
+TIE_BAND = 0.05
+N_STYLE_REFS = 8
+
+STYLE_JUDGE_V2 = (
+    "Two candidate chat replies were written for the same message. Exactly one of them should be judged "
+    "closer to how THIS person writes.\n"
+    "Judge ONLY writing style: length, casing, punctuation, emoji or emoticons, slang, abbreviations, "
+    "directness, how they agree, refuse or push back.\n"
+    "Ignore content quality, grammar and politeness. A shorter, messier reply can be the better match.\n\n"
+    "{card}"
+    "{real}"
+    "Other real replies by this person (to different messages):\n{refs}\n\n"
+    'Candidate A: "{a}"\n'
+    'Candidate B: "{b}"\n\n'
+    "Which candidate is closer to this person's style? Answer with exactly one letter: A or B."
+)
+
+
+def _fmt_v2(refs, card, a, b, real=None):
+    return STYLE_JUDGE_V2.format(
+        card=f"Style profile of this person:\n{card}\n\n" if card else "",
+        real=f'This person\'s actual reply to this message: "{real}"\n' if real else "",
+        refs="\n".join(f'- "{t}"' for t in list(refs)[:N_STYLE_REFS]), a=a, b=b)
+
+
+def _prob_a(resp) -> float:
+    """P(A) from the first generated token's top logprobs; falls back to the text if logprobs are missing."""
+    ch = resp.choices[0]
+    lp = getattr(ch, "logprobs", None)
+    pa = pb = 0.0
+    if lp is not None and getattr(lp, "content", None):
+        for t in lp.content[0].top_logprobs:
+            tok = t.token.strip().upper()
+            if tok == "A":
+                pa += math.exp(t.logprob)
+            elif tok == "B":
+                pb += math.exp(t.logprob)
+    if pa + pb == 0:
+        txt = (ch.message.content or "").strip().upper()[:1]
+        return 1.0 if txt == "A" else 0.0 if txt == "B" else 0.5
+    return pa / (pa + pb)
+
+
+def judge_style_prob(client, refs, card, a, b, real=None, model=DEFAULT_MODEL) -> float:
+    p = _fmt_v2(refs, card, a, b, real)
+    r = client.chat.completions.create(model=model, messages=[{"role": "user", "content": p}],
+                                       temperature=0.0, max_tokens=1, logprobs=True, top_logprobs=5, seed=1)
+    return _prob_a(r)
+
+
+def judge_style_pair_v2(client, refs, card, x, y, real=None, model=DEFAULT_MODEL, tie_band=TIE_BAND) -> dict:
+    """Both orders. p_x = mean(P(x | x shown as A), P(x | x shown as B)). Returns p_x and 'x'|'y'|'tie'."""
+    p1 = judge_style_prob(client, refs, card, x, y, real, model)        # x is A
+    p2 = 1.0 - judge_style_prob(client, refs, card, y, x, real, model)  # x is B
+    p_x = (p1 + p2) / 2
+    out = "tie" if abs(p_x - 0.5) < tie_band else ("x" if p_x > 0.5 else "y")
+    return {"p_x": round(p_x, 4), "p_first": round(p1, 4), "p_second": round(p2, 4), "outcome": out}
+
+
+def calibrate_v2(client, items, model=DEFAULT_MODEL, threshold=0.85) -> dict:
+    """items: dicts with real, plain, refs (list, must not contain real), card. Real must win >= threshold."""
+    res = [judge_style_pair_v2(client, it["refs"], it.get("card"), it["real"], it["plain"], model=model) for it in items]
+    o = [r["outcome"] for r in res]
+    n = max(len(o), 1)
+    decided = [x for x in o if x != "tie"]
+    return {"real_win_rate": o.count("x") / n, "tie_rate": o.count("tie") / n, "loss_rate": o.count("y") / n,
+            "accuracy_when_decided": (decided.count("x") / len(decided)) if decided else float("nan"),
+            "mean_p_real": sum(r["p_x"] for r in res) / n, "passed": o.count("x") / n >= threshold, "results": res}

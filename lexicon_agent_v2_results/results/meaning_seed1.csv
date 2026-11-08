@@ -1,0 +1,401 @@
+user_id,row_id,label,cond,score,act_matches,added_facts,styledist_cos
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,A,5,True,False,0.6959066987037659
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,B,5,True,False,0.7963642477989197
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,C,4,True,False,0.788970947265625
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,E,3,True,False,0.8133549690246582
+P1,P1_scene_L20_2_chat,Sarcasm / Teasing,REAL,4,True,False,0.9999999403953552
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,A,4,True,False,0.6174606680870056
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,B,4,True,False,0.8412011861801147
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,C,3,True,False,0.9196162223815918
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,E,4,True,False,0.9038029909133911
+P1,P1_scene_L20_5_chat,Sarcasm / Teasing,REAL,5,True,False,1.0
+P1,P1_scene_L19_5_chat,Set a Boundary,A,5,True,False,0.7493901252746582
+P1,P1_scene_L19_5_chat,Set a Boundary,B,5,True,False,0.9070321321487427
+P1,P1_scene_L19_5_chat,Set a Boundary,C,5,True,False,0.9070321321487427
+P1,P1_scene_L19_5_chat,Set a Boundary,E,5,True,False,0.9070321321487427
+P1,P1_scene_L19_5_chat,Set a Boundary,REAL,5,True,False,1.000000238418579
+P1,P1_scene_L15_1_chat,Complain / Vent,A,5,True,False,0.5672624111175537
+P1,P1_scene_L15_1_chat,Complain / Vent,B,4,True,False,0.733907163143158
+P1,P1_scene_L15_1_chat,Complain / Vent,C,4,True,False,0.733907163143158
+P1,P1_scene_L15_1_chat,Complain / Vent,E,4,True,False,0.7158982753753662
+P1,P1_scene_L15_1_chat,Complain / Vent,REAL,5,True,False,1.0
+P1,P1_scene_L13_1_chat,Direct / Blunt,A,5,True,False,0.8085455894470215
+P1,P1_scene_L13_1_chat,Direct / Blunt,B,5,True,False,0.8562042117118835
+P1,P1_scene_L13_1_chat,Direct / Blunt,C,5,True,False,0.8906685709953308
+P1,P1_scene_L13_1_chat,Direct / Blunt,E,5,True,False,0.8870469331741333
+P1,P1_scene_L13_1_chat,Direct / Blunt,REAL,3,True,False,0.9999999403953552
+P1,P1_scene_L19_3_chat,Set a Boundary,A,5,True,False,0.6024667024612427
+P1,P1_scene_L19_3_chat,Set a Boundary,B,5,True,False,0.859728217124939
+P1,P1_scene_L19_3_chat,Set a Boundary,C,5,True,False,0.9243502020835876
+P1,P1_scene_L19_3_chat,Set a Boundary,E,5,True,False,0.9121983051300049
+P1,P1_scene_L19_3_chat,Set a Boundary,REAL,5,True,False,1.0000001192092896
+P1,P1_scene_L11_3_chat,Summarize / Condense,A,5,True,False,0.5834856033325195
+P1,P1_scene_L11_3_chat,Summarize / Condense,B,5,True,False,0.8069716095924377
+P1,P1_scene_L11_3_chat,Summarize / Condense,C,4,True,False,0.9637372493743896
+P1,P1_scene_L11_3_chat,Summarize / Condense,E,2,False,False,0.9168403744697571
+P1,P1_scene_L11_3_chat,Summarize / Condense,REAL,4,True,False,0.9999998807907104
+P1,P1_scene_L15_5_chat,Complain / Vent,A,5,True,False,0.7758068442344666
+P1,P1_scene_L15_5_chat,Complain / Vent,B,4,True,False,0.9110496044158936
+P1,P1_scene_L15_5_chat,Complain / Vent,C,4,True,False,0.9220523238182068
+P1,P1_scene_L15_5_chat,Complain / Vent,E,5,True,False,0.9204662442207336
+P1,P1_scene_L15_5_chat,Complain / Vent,REAL,5,True,False,1.0
+P1,P1_scene_L05_2_chat,Refuse / Decline,A,5,True,False,0.6707366704940796
+P1,P1_scene_L05_2_chat,Refuse / Decline,B,5,True,False,0.840226411819458
+P1,P1_scene_L05_2_chat,Refuse / Decline,C,5,True,False,0.840226411819458
+P1,P1_scene_L05_2_chat,Refuse / Decline,E,5,True,False,0.8123259544372559
+P1,P1_scene_L05_2_chat,Refuse / Decline,REAL,5,True,False,1.0000001192092896
+P1,P1_scene_L18_2_chat,Express Disappointment,A,5,True,False,0.7847622632980347
+P1,P1_scene_L18_2_chat,Express Disappointment,B,5,True,False,0.9677056670188904
+P1,P1_scene_L18_2_chat,Express Disappointment,C,5,True,False,0.9693127870559692
+P1,P1_scene_L18_2_chat,Express Disappointment,E,5,True,False,0.7739839553833008
+P1,P1_scene_L18_2_chat,Express Disappointment,REAL,3,True,False,1.0
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,A,5,True,False,0.7029547691345215
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,B,5,True,False,0.7447834014892578
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,C,5,True,False,0.7447834014892578
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,E,5,True,False,0.7447834014892578
+P1,P1_scene_L16_4_chat,Reject Idea with Alternative,REAL,5,True,False,1.0
+P1,P1_scene_L07_1_chat,Correct / Restate,A,5,True,False,0.7008509635925293
+P1,P1_scene_L07_1_chat,Correct / Restate,B,5,True,False,0.9632614850997925
+P1,P1_scene_L07_1_chat,Correct / Restate,C,5,True,False,0.7362548112869263
+P1,P1_scene_L07_1_chat,Correct / Restate,E,5,True,False,0.7362548112869263
+P1,P1_scene_L07_1_chat,Correct / Restate,REAL,1,False,False,1.0000001192092896
+P1,P1_scene_L09_3_chat,5W1H Question,A,5,True,False,0.6601109504699707
+P1,P1_scene_L09_3_chat,5W1H Question,B,5,True,False,0.9289295673370361
+P1,P1_scene_L09_3_chat,5W1H Question,C,5,True,False,0.9217153191566467
+P1,P1_scene_L09_3_chat,5W1H Question,E,5,True,False,0.9186943173408508
+P1,P1_scene_L09_3_chat,5W1H Question,REAL,5,True,False,1.0000001192092896
+P1,P1_scene_L04_4_chat,Full Disagree,A,5,True,False,0.6669355630874634
+P1,P1_scene_L04_4_chat,Full Disagree,B,5,True,False,0.815226137638092
+P1,P1_scene_L04_4_chat,Full Disagree,C,5,True,False,0.7892967462539673
+P1,P1_scene_L04_4_chat,Full Disagree,E,5,True,False,0.8076350092887878
+P1,P1_scene_L04_4_chat,Full Disagree,REAL,5,True,False,1.0
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,A,5,True,False,0.7044620513916016
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,B,5,True,False,0.9682630896568298
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,C,5,True,False,0.8295861482620239
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,E,5,True,False,0.7728352546691895
+P1,P1_scene_L16_2_chat,Reject Idea with Alternative,REAL,5,True,False,0.9999999403953552
+P1,P1_scene_L10_4_chat,Elaborate / Expand,A,4,True,False,0.6883376240730286
+P1,P1_scene_L10_4_chat,Elaborate / Expand,B,1,False,False,0.8478483557701111
+P1,P1_scene_L10_4_chat,Elaborate / Expand,C,1,False,False,0.8453711271286011
+P1,P1_scene_L10_4_chat,Elaborate / Expand,E,1,False,False,0.8450507521629333
+P1,P1_scene_L10_4_chat,Elaborate / Expand,REAL,1,False,False,1.0000001192092896
+P1,P1_scene_L05_4_chat,Refuse / Decline,A,5,True,False,0.6969210505485535
+P1,P1_scene_L05_4_chat,Refuse / Decline,B,5,True,False,0.7756089568138123
+P1,P1_scene_L05_4_chat,Refuse / Decline,C,5,True,False,0.7756089568138123
+P1,P1_scene_L05_4_chat,Refuse / Decline,E,5,True,False,0.7756089568138123
+P1,P1_scene_L05_4_chat,Refuse / Decline,REAL,5,True,False,1.0
+P1,P1_scene_L17_4_chat,Push Back on Request,A,5,True,False,0.6982570886611938
+P1,P1_scene_L17_4_chat,Push Back on Request,B,5,True,False,0.9112809896469116
+P1,P1_scene_L17_4_chat,Push Back on Request,C,5,True,False,0.8994675874710083
+P1,P1_scene_L17_4_chat,Push Back on Request,E,5,True,False,0.864964485168457
+P1,P1_scene_L17_4_chat,Push Back on Request,REAL,5,True,False,0.9999999403953552
+P1,P1_scene_L04_5_chat,Full Disagree,A,5,True,False,0.6928456425666809
+P1,P1_scene_L04_5_chat,Full Disagree,B,5,True,False,0.8218870162963867
+P1,P1_scene_L04_5_chat,Full Disagree,C,4,True,False,0.8172520399093628
+P1,P1_scene_L04_5_chat,Full Disagree,E,5,True,False,0.8160428404808044
+P1,P1_scene_L04_5_chat,Full Disagree,REAL,2,False,False,0.9999999403953552
+P1,P1_scene_L07_4_chat,Correct / Restate,A,5,True,False,0.7939888834953308
+P1,P1_scene_L07_4_chat,Correct / Restate,B,5,True,False,0.8939856290817261
+P1,P1_scene_L07_4_chat,Correct / Restate,C,5,True,False,0.8215693235397339
+P1,P1_scene_L07_4_chat,Correct / Restate,E,5,True,False,0.9045106768608093
+P1,P1_scene_L07_4_chat,Correct / Restate,REAL,5,True,False,1.0000001192092896
+P1,P1_scene_L17_1_chat,Push Back on Request,A,5,True,False,0.697759747505188
+P1,P1_scene_L17_1_chat,Push Back on Request,B,5,True,False,0.8775055408477783
+P1,P1_scene_L17_1_chat,Push Back on Request,C,5,True,False,0.9524155855178833
+P1,P1_scene_L17_1_chat,Push Back on Request,E,5,True,False,0.9038083553314209
+P1,P1_scene_L17_1_chat,Push Back on Request,REAL,5,True,False,0.9999997615814209
+P1,P1_scene_L13_5_chat,Direct / Blunt,A,5,True,False,0.6610077619552612
+P1,P1_scene_L13_5_chat,Direct / Blunt,B,2,False,False,0.774814248085022
+P1,P1_scene_L13_5_chat,Direct / Blunt,C,3,True,False,0.9154981374740601
+P1,P1_scene_L13_5_chat,Direct / Blunt,E,3,True,False,0.8975802659988403
+P1,P1_scene_L13_5_chat,Direct / Blunt,REAL,4,True,False,0.9999998211860657
+P1,P1_scene_L18_5_chat,Express Disappointment,A,5,True,False,0.7733843326568604
+P1,P1_scene_L18_5_chat,Express Disappointment,B,5,True,False,0.798595130443573
+P1,P1_scene_L18_5_chat,Express Disappointment,C,5,True,False,0.7233675718307495
+P1,P1_scene_L18_5_chat,Express Disappointment,E,3,True,False,0.8073477149009705
+P1,P1_scene_L18_5_chat,Express Disappointment,REAL,5,True,False,1.0
+P1,P1_scene_L10_2_chat,Elaborate / Expand,A,5,True,False,0.6753739714622498
+P1,P1_scene_L10_2_chat,Elaborate / Expand,B,5,True,False,0.8608399629592896
+P1,P1_scene_L10_2_chat,Elaborate / Expand,C,5,True,False,0.7187174558639526
+P1,P1_scene_L10_2_chat,Elaborate / Expand,E,5,True,False,0.7351745963096619
+P1,P1_scene_L10_2_chat,Elaborate / Expand,REAL,5,True,False,0.9999998807907104
+P1,P1_scene_L06_1_chat,Suggest / Propose,A,5,True,False,0.569358766078949
+P1,P1_scene_L06_1_chat,Suggest / Propose,B,2,False,False,0.966633677482605
+P1,P1_scene_L06_1_chat,Suggest / Propose,C,5,True,False,0.8118899464607239
+P1,P1_scene_L06_1_chat,Suggest / Propose,E,5,True,False,0.8118899464607239
+P1,P1_scene_L06_1_chat,Suggest / Propose,REAL,5,True,False,1.0
+P1,P1_scene_L06_2_chat,Suggest / Propose,A,5,True,False,0.5835909843444824
+P1,P1_scene_L06_2_chat,Suggest / Propose,B,5,True,False,0.7884321212768555
+P1,P1_scene_L06_2_chat,Suggest / Propose,C,5,True,False,0.9783357381820679
+P1,P1_scene_L06_2_chat,Suggest / Propose,E,5,True,False,0.9749438762664795
+P1,P1_scene_L06_2_chat,Suggest / Propose,REAL,5,True,False,1.0
+P1,P1_scene_L12_1_chat,Soften / Hedge,A,4,True,False,0.7961105704307556
+P1,P1_scene_L12_1_chat,Soften / Hedge,B,4,True,False,0.9141737222671509
+P1,P1_scene_L12_1_chat,Soften / Hedge,C,3,True,False,0.8674126863479614
+P1,P1_scene_L12_1_chat,Soften / Hedge,E,4,True,False,0.9343510270118713
+P1,P1_scene_L12_1_chat,Soften / Hedge,REAL,5,True,False,1.0
+P1,P1_scene_L14_1_chat,Express Emotion,A,5,True,False,0.752903401851654
+P1,P1_scene_L14_1_chat,Express Emotion,B,5,True,False,0.7882721424102783
+P1,P1_scene_L14_1_chat,Express Emotion,C,5,True,False,0.7443253993988037
+P1,P1_scene_L14_1_chat,Express Emotion,E,5,True,False,0.7022361755371094
+P1,P1_scene_L14_1_chat,Express Emotion,REAL,5,True,False,1.0000001192092896
+P1,P1_scene_L12_2_chat,Soften / Hedge,A,5,True,False,0.7886861562728882
+P1,P1_scene_L12_2_chat,Soften / Hedge,B,2,False,False,0.9231566190719604
+P1,P1_scene_L12_2_chat,Soften / Hedge,C,3,True,False,0.8769776821136475
+P1,P1_scene_L12_2_chat,Soften / Hedge,E,2,False,False,0.8848670721054077
+P1,P1_scene_L12_2_chat,Soften / Hedge,REAL,1,False,False,0.9999997615814209
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,A,5,True,False,0.7308758497238159
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,B,5,True,False,0.8562471866607666
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,C,5,True,False,0.8182186484336853
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,E,5,True,False,0.8901852369308472
+P1,P1_scene_L03_1_chat,Partial Agree + Modification,REAL,5,True,False,1.0
+P1,P1_scene_L01_2_chat,Acknowledge,A,5,True,False,0.8686644434928894
+P1,P1_scene_L01_2_chat,Acknowledge,B,5,True,False,1.0
+P1,P1_scene_L01_2_chat,Acknowledge,C,5,True,False,0.971671462059021
+P1,P1_scene_L01_2_chat,Acknowledge,E,5,True,False,0.9036790728569031
+P1,P1_scene_L01_2_chat,Acknowledge,REAL,5,True,False,1.0
+P1,P1_scene_L09_1_chat,5W1H Question,A,5,True,False,0.74867844581604
+P1,P1_scene_L09_1_chat,5W1H Question,B,5,True,False,0.8320151567459106
+P1,P1_scene_L09_1_chat,5W1H Question,C,5,True,False,0.8682327270507812
+P1,P1_scene_L09_1_chat,5W1H Question,E,5,True,False,0.8114570379257202
+P1,P1_scene_L09_1_chat,5W1H Question,REAL,5,True,False,1.0
+P1,P1_scene_L01_3_chat,Acknowledge,A,5,True,False,0.7849043011665344
+P1,P1_scene_L01_3_chat,Acknowledge,B,3,True,False,0.9088545441627502
+P1,P1_scene_L01_3_chat,Acknowledge,C,4,True,False,0.9221451282501221
+P1,P1_scene_L01_3_chat,Acknowledge,E,4,True,False,0.8597221374511719
+P1,P1_scene_L01_3_chat,Acknowledge,REAL,3,True,False,1.0
+P1,P1_scene_L02_1_chat,Full Agree,A,5,True,False,0.5066007971763611
+P1,P1_scene_L02_1_chat,Full Agree,B,5,True,False,0.829842746257782
+P1,P1_scene_L02_1_chat,Full Agree,C,5,True,False,0.818185031414032
+P1,P1_scene_L02_1_chat,Full Agree,E,5,True,False,0.818185031414032
+P1,P1_scene_L02_1_chat,Full Agree,REAL,5,True,False,0.9999998807907104
+P1,P1_scene_L02_2_chat,Full Agree,A,5,True,False,0.6895215511322021
+P1,P1_scene_L02_2_chat,Full Agree,B,5,True,False,0.8919180631637573
+P1,P1_scene_L02_2_chat,Full Agree,C,5,True,False,0.8919180631637573
+P1,P1_scene_L02_2_chat,Full Agree,E,5,True,False,0.8919180631637573
+P1,P1_scene_L02_2_chat,Full Agree,REAL,5,True,False,1.0000001192092896
+P1,P1_scene_L11_2_chat,Summarize / Condense,A,5,True,False,0.6444850564002991
+P1,P1_scene_L11_2_chat,Summarize / Condense,B,3,True,False,0.9423720836639404
+P1,P1_scene_L11_2_chat,Summarize / Condense,C,3,True,False,0.9402968883514404
+P1,P1_scene_L11_2_chat,Summarize / Condense,E,2,False,False,0.7504299283027649
+P1,P1_scene_L11_2_chat,Summarize / Condense,REAL,2,False,False,0.9999999403953552
+P1,P1_scene_L08_3_chat,Reverify / Confirm,A,5,True,False,0.7941065430641174
+P1,P1_scene_L08_3_chat,Reverify / Confirm,B,5,True,False,0.8731902837753296
+P1,P1_scene_L08_3_chat,Reverify / Confirm,C,3,True,False,0.9288222193717957
+P1,P1_scene_L08_3_chat,Reverify / Confirm,E,5,True,False,0.8878703117370605
+P1,P1_scene_L08_3_chat,Reverify / Confirm,REAL,5,True,False,1.0
+P1,P1_scene_L14_3_chat,Express Emotion,A,5,True,False,0.7926148176193237
+P1,P1_scene_L14_3_chat,Express Emotion,B,3,True,False,0.8538541793823242
+P1,P1_scene_L14_3_chat,Express Emotion,C,2,False,False,0.9097265005111694
+P1,P1_scene_L14_3_chat,Express Emotion,E,4,True,False,0.8847302198410034
+P1,P1_scene_L14_3_chat,Express Emotion,REAL,1,False,False,1.0
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,A,5,True,False,0.6640444397926331
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,B,5,True,False,0.9199323654174805
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,C,5,True,False,0.9199323654174805
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,E,5,True,False,0.9199323654174805
+P1,P1_scene_L03_2_chat,Partial Agree + Modification,REAL,5,True,False,1.0000001192092896
+P1,P1_scene_L08_4_chat,Reverify / Confirm,A,5,True,False,0.7765684723854065
+P1,P1_scene_L08_4_chat,Reverify / Confirm,B,3,True,False,0.9170948266983032
+P1,P1_scene_L08_4_chat,Reverify / Confirm,C,4,True,False,0.9400479197502136
+P1,P1_scene_L08_4_chat,Reverify / Confirm,E,5,True,False,0.9211079478263855
+P1,P1_scene_L08_4_chat,Reverify / Confirm,REAL,3,True,False,1.0000001192092896
+P2,P2_scene_L14_3_chat,Express Emotion,A,5,True,False,0.8615400195121765
+P2,P2_scene_L14_3_chat,Express Emotion,B,3,True,False,0.9036831259727478
+P2,P2_scene_L14_3_chat,Express Emotion,C,4,True,False,0.7090625762939453
+P2,P2_scene_L14_3_chat,Express Emotion,E,4,True,False,0.8986755609512329
+P2,P2_scene_L14_3_chat,Express Emotion,REAL,4,True,False,1.0
+P2,P2_scene_L13_1_chat,Direct / Blunt,A,5,True,False,0.5851038694381714
+P2,P2_scene_L13_1_chat,Direct / Blunt,B,5,True,False,0.845414400100708
+P2,P2_scene_L13_1_chat,Direct / Blunt,C,5,True,False,0.8630853295326233
+P2,P2_scene_L13_1_chat,Direct / Blunt,E,5,True,False,0.8049455881118774
+P2,P2_scene_L13_1_chat,Direct / Blunt,REAL,5,True,False,1.0
+P2,P2_scene_L15_5_chat,Complain / Vent,A,5,True,False,0.7417439818382263
+P2,P2_scene_L15_5_chat,Complain / Vent,B,4,True,False,0.7481873631477356
+P2,P2_scene_L15_5_chat,Complain / Vent,C,5,True,False,0.8766705989837646
+P2,P2_scene_L15_5_chat,Complain / Vent,E,4,True,False,0.7481873631477356
+P2,P2_scene_L15_5_chat,Complain / Vent,REAL,5,True,False,0.9999998807907104
+P2,P2_scene_L18_2_chat,Express Disappointment,A,5,True,False,0.5689111351966858
+P2,P2_scene_L18_2_chat,Express Disappointment,B,4,True,False,0.9272795915603638
+P2,P2_scene_L18_2_chat,Express Disappointment,C,4,True,False,0.8858854174613953
+P2,P2_scene_L18_2_chat,Express Disappointment,E,5,True,False,0.8788985013961792
+P2,P2_scene_L18_2_chat,Express Disappointment,REAL,5,True,False,1.0
+P2,P2_scene_L07_4_chat,Correct / Restate,A,5,True,False,0.7420412302017212
+P2,P2_scene_L07_4_chat,Correct / Restate,B,5,True,False,0.8222768306732178
+P2,P2_scene_L07_4_chat,Correct / Restate,C,5,True,False,0.7249206304550171
+P2,P2_scene_L07_4_chat,Correct / Restate,E,5,True,False,0.7255990505218506
+P2,P2_scene_L07_4_chat,Correct / Restate,REAL,4,True,False,0.9999998807907104
+P2,P2_scene_L06_1_chat,Suggest / Propose,A,5,True,False,0.6547213792800903
+P2,P2_scene_L06_1_chat,Suggest / Propose,B,5,True,False,0.9150707125663757
+P2,P2_scene_L06_1_chat,Suggest / Propose,C,5,True,False,0.9209611415863037
+P2,P2_scene_L06_1_chat,Suggest / Propose,E,5,True,False,0.9345760941505432
+P2,P2_scene_L06_1_chat,Suggest / Propose,REAL,3,True,False,0.9999998807907104
+P2,P2_scene_L18_5_chat,Express Disappointment,A,5,True,False,0.782579243183136
+P2,P2_scene_L18_5_chat,Express Disappointment,B,5,True,False,0.9527500867843628
+P2,P2_scene_L18_5_chat,Express Disappointment,C,5,True,False,0.9712224006652832
+P2,P2_scene_L18_5_chat,Express Disappointment,E,5,True,False,0.9417635202407837
+P2,P2_scene_L18_5_chat,Express Disappointment,REAL,5,True,False,1.0000001192092896
+P2,P2_scene_L04_5_chat,Full Disagree,A,5,True,False,0.7979554533958435
+P2,P2_scene_L04_5_chat,Full Disagree,B,5,True,False,0.8021664023399353
+P2,P2_scene_L04_5_chat,Full Disagree,C,5,True,False,0.7240386009216309
+P2,P2_scene_L04_5_chat,Full Disagree,E,5,True,False,0.8021664023399353
+P2,P2_scene_L04_5_chat,Full Disagree,REAL,5,True,False,1.000000238418579
+P2,P2_scene_L13_5_chat,Direct / Blunt,A,5,True,False,0.8074088096618652
+P2,P2_scene_L13_5_chat,Direct / Blunt,B,3,True,False,0.8515205383300781
+P2,P2_scene_L13_5_chat,Direct / Blunt,C,3,True,False,0.796830952167511
+P2,P2_scene_L13_5_chat,Direct / Blunt,E,5,True,False,0.9614742398262024
+P2,P2_scene_L13_5_chat,Direct / Blunt,REAL,4,True,False,0.9999998807907104
+P2,P2_scene_L04_4_chat,Full Disagree,A,5,True,False,0.8745726346969604
+P2,P2_scene_L04_4_chat,Full Disagree,B,5,True,False,0.8198829889297485
+P2,P2_scene_L04_4_chat,Full Disagree,C,4,True,False,0.7650357484817505
+P2,P2_scene_L04_4_chat,Full Disagree,E,4,True,False,0.6824785470962524
+P2,P2_scene_L04_4_chat,Full Disagree,REAL,4,True,False,1.0000001192092896
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,A,5,True,False,0.511396050453186
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,B,5,True,False,0.8598992228507996
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,C,5,True,False,0.8035153150558472
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,E,5,True,False,0.89152592420578
+P2,P2_scene_L20_5_chat,Sarcasm / Teasing,REAL,5,True,False,1.0000001192092896
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,A,5,True,False,0.8401278257369995
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,B,5,True,False,0.8509057760238647
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,C,4,True,False,0.8219324350357056
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,E,5,True,False,0.9581557512283325
+P2,P2_scene_L20_2_chat,Sarcasm / Teasing,REAL,5,True,False,1.000000238418579
+P2,P2_scene_L19_4_chat,Set a Boundary,A,5,True,False,0.5771114230155945
+P2,P2_scene_L19_4_chat,Set a Boundary,B,5,True,False,0.96674644947052
+P2,P2_scene_L19_4_chat,Set a Boundary,C,5,True,False,0.6436257362365723
+P2,P2_scene_L19_4_chat,Set a Boundary,E,5,True,False,0.7341300845146179
+P2,P2_scene_L19_4_chat,Set a Boundary,REAL,5,True,False,0.9999998211860657
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,A,5,True,False,0.7442551851272583
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,B,4,True,False,0.8070207834243774
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,C,4,True,False,0.8041238188743591
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,E,4,True,False,0.7956469058990479
+P2,P2_scene_L16_2_chat,Reject Idea with Alternative,REAL,4,True,False,1.0
+P2,P2_scene_L05_4_chat,Refuse / Decline,A,5,True,False,0.7454417943954468
+P2,P2_scene_L05_4_chat,Refuse / Decline,B,5,True,False,0.8239840269088745
+P2,P2_scene_L05_4_chat,Refuse / Decline,C,5,True,False,0.9235051274299622
+P2,P2_scene_L05_4_chat,Refuse / Decline,E,5,True,False,0.7901226282119751
+P2,P2_scene_L05_4_chat,Refuse / Decline,REAL,5,True,False,1.0
+P2,P2_scene_L17_4_chat,Push Back on Request,A,5,True,False,0.7234058380126953
+P2,P2_scene_L17_4_chat,Push Back on Request,B,5,True,False,0.8251349925994873
+P2,P2_scene_L17_4_chat,Push Back on Request,C,4,True,False,0.8527947664260864
+P2,P2_scene_L17_4_chat,Push Back on Request,E,5,True,False,0.9019819498062134
+P2,P2_scene_L17_4_chat,Push Back on Request,REAL,5,True,False,0.9999998807907104
+P2,P2_scene_L09_1_chat,5W1H Question,A,5,True,False,0.8851040005683899
+P2,P2_scene_L09_1_chat,5W1H Question,B,5,True,False,0.8968183398246765
+P2,P2_scene_L09_1_chat,5W1H Question,C,5,True,False,0.8968183398246765
+P2,P2_scene_L09_1_chat,5W1H Question,E,5,True,False,0.8968183398246765
+P2,P2_scene_L09_1_chat,5W1H Question,REAL,5,True,False,1.0
+P2,P2_scene_L07_1_chat,Correct / Restate,A,5,True,False,0.758246660232544
+P2,P2_scene_L07_1_chat,Correct / Restate,B,5,True,False,0.8473625183105469
+P2,P2_scene_L07_1_chat,Correct / Restate,C,5,True,False,0.8865751028060913
+P2,P2_scene_L07_1_chat,Correct / Restate,E,5,True,False,0.7636393308639526
+P2,P2_scene_L07_1_chat,Correct / Restate,REAL,3,True,False,1.0
+P2,P2_scene_L01_3_chat,Acknowledge,A,5,True,False,0.9304691553115845
+P2,P2_scene_L01_3_chat,Acknowledge,B,4,True,False,0.8363965749740601
+P2,P2_scene_L01_3_chat,Acknowledge,C,4,True,False,0.8999183773994446
+P2,P2_scene_L01_3_chat,Acknowledge,E,4,True,False,0.8363965749740601
+P2,P2_scene_L01_3_chat,Acknowledge,REAL,5,True,False,0.9999999403953552
+P2,P2_scene_L15_1_chat,Complain / Vent,A,5,True,False,0.9458584189414978
+P2,P2_scene_L15_1_chat,Complain / Vent,B,3,True,False,0.9407275915145874
+P2,P2_scene_L15_1_chat,Complain / Vent,C,4,True,False,0.9353753328323364
+P2,P2_scene_L15_1_chat,Complain / Vent,E,3,True,False,0.9366569519042969
+P2,P2_scene_L15_1_chat,Complain / Vent,REAL,5,True,False,1.0000001192092896
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,A,5,True,False,0.8493213653564453
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,B,5,True,False,0.9681011438369751
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,C,5,True,False,0.7486989498138428
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,E,5,True,False,0.6988965272903442
+P2,P2_scene_L03_1_chat,Partial Agree + Modification,REAL,5,True,False,1.0
+P2,P2_scene_L05_2_chat,Refuse / Decline,A,5,True,False,0.6863691210746765
+P2,P2_scene_L05_2_chat,Refuse / Decline,B,5,True,False,0.9608267545700073
+P2,P2_scene_L05_2_chat,Refuse / Decline,C,5,True,False,0.9608267545700073
+P2,P2_scene_L05_2_chat,Refuse / Decline,E,5,True,False,0.9608267545700073
+P2,P2_scene_L05_2_chat,Refuse / Decline,REAL,5,True,False,0.9999998807907104
+P2,P2_scene_L19_5_chat,Set a Boundary,A,5,True,False,0.9535764455795288
+P2,P2_scene_L19_5_chat,Set a Boundary,B,5,True,False,0.7654784321784973
+P2,P2_scene_L19_5_chat,Set a Boundary,C,5,True,False,0.6774483323097229
+P2,P2_scene_L19_5_chat,Set a Boundary,E,5,True,False,0.8741230964660645
+P2,P2_scene_L19_5_chat,Set a Boundary,REAL,5,True,False,0.9999998807907104
+P2,P2_scene_L17_1_chat,Push Back on Request,A,5,True,False,0.9306974411010742
+P2,P2_scene_L17_1_chat,Push Back on Request,B,4,True,False,0.8561651110649109
+P2,P2_scene_L17_1_chat,Push Back on Request,C,5,True,False,0.9197970628738403
+P2,P2_scene_L17_1_chat,Push Back on Request,E,5,True,False,0.9103756546974182
+P2,P2_scene_L17_1_chat,Push Back on Request,REAL,4,True,False,1.0000001192092896
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,A,4,True,False,0.7102912664413452
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,B,4,True,False,0.7423173189163208
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,C,4,True,False,0.8062037229537964
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,E,4,True,False,0.6434820890426636
+P2,P2_scene_L16_4_chat,Reject Idea with Alternative,REAL,5,True,False,1.0000001192092896
+P2,P2_scene_L06_2_chat,Suggest / Propose,A,5,True,False,0.46672555804252625
+P2,P2_scene_L06_2_chat,Suggest / Propose,B,5,True,False,0.8925825357437134
+P2,P2_scene_L06_2_chat,Suggest / Propose,C,5,True,False,0.8925825357437134
+P2,P2_scene_L06_2_chat,Suggest / Propose,E,5,True,False,0.8925825357437134
+P2,P2_scene_L06_2_chat,Suggest / Propose,REAL,5,True,False,1.0000001192092896
+P2,P2_scene_L10_2_chat,Elaborate / Expand,A,5,True,False,0.6146566271781921
+P2,P2_scene_L10_2_chat,Elaborate / Expand,B,5,True,False,0.9347309470176697
+P2,P2_scene_L10_2_chat,Elaborate / Expand,C,5,True,False,0.9347309470176697
+P2,P2_scene_L10_2_chat,Elaborate / Expand,E,5,True,False,0.9394547939300537
+P2,P2_scene_L10_2_chat,Elaborate / Expand,REAL,5,True,False,0.9999998807907104
+P2,P2_scene_L02_1_chat,Full Agree,A,5,True,False,0.6442172527313232
+P2,P2_scene_L02_1_chat,Full Agree,B,5,True,False,0.7878550291061401
+P2,P2_scene_L02_1_chat,Full Agree,C,5,True,False,0.8160351514816284
+P2,P2_scene_L02_1_chat,Full Agree,E,5,True,False,0.8234112858772278
+P2,P2_scene_L02_1_chat,Full Agree,REAL,5,True,False,1.0
+P2,P2_scene_L10_4_chat,Elaborate / Expand,A,5,True,False,0.838754415512085
+P2,P2_scene_L10_4_chat,Elaborate / Expand,B,5,True,False,0.7361407279968262
+P2,P2_scene_L10_4_chat,Elaborate / Expand,C,5,True,False,0.9061369299888611
+P2,P2_scene_L10_4_chat,Elaborate / Expand,E,5,True,False,0.9061369299888611
+P2,P2_scene_L10_4_chat,Elaborate / Expand,REAL,3,True,False,0.9999998807907104
+P2,P2_scene_L12_2_chat,Soften / Hedge,A,5,True,False,0.6068724989891052
+P2,P2_scene_L12_2_chat,Soften / Hedge,B,4,True,False,0.9377304315567017
+P2,P2_scene_L12_2_chat,Soften / Hedge,C,5,True,False,0.8513926267623901
+P2,P2_scene_L12_2_chat,Soften / Hedge,E,4,True,False,0.910671591758728
+P2,P2_scene_L12_2_chat,Soften / Hedge,REAL,4,True,False,1.0
+P2,P2_scene_L11_2_chat,Summarize / Condense,A,5,True,False,0.5345360636711121
+P2,P2_scene_L11_2_chat,Summarize / Condense,B,3,True,False,0.6663901805877686
+P2,P2_scene_L11_2_chat,Summarize / Condense,C,2,True,True,0.9336379766464233
+P2,P2_scene_L11_2_chat,Summarize / Condense,E,2,True,True,0.7143315076828003
+P2,P2_scene_L11_2_chat,Summarize / Condense,REAL,4,True,False,1.0
+P2,P2_scene_L02_2_chat,Full Agree,A,5,True,False,0.6403917670249939
+P2,P2_scene_L02_2_chat,Full Agree,B,5,True,False,0.9566503167152405
+P2,P2_scene_L02_2_chat,Full Agree,C,5,True,False,0.9566503167152405
+P2,P2_scene_L02_2_chat,Full Agree,E,5,True,False,0.9566503167152405
+P2,P2_scene_L02_2_chat,Full Agree,REAL,5,True,False,0.9999998211860657
+P2,P2_scene_L12_1_chat,Soften / Hedge,A,5,True,False,0.7698140144348145
+P2,P2_scene_L12_1_chat,Soften / Hedge,B,3,True,False,0.8548314571380615
+P2,P2_scene_L12_1_chat,Soften / Hedge,C,4,True,False,0.6809629201889038
+P2,P2_scene_L12_1_chat,Soften / Hedge,E,4,True,False,0.8128361701965332
+P2,P2_scene_L12_1_chat,Soften / Hedge,REAL,1,False,False,1.000000238418579
+P2,P2_scene_L11_3_chat,Summarize / Condense,A,5,True,False,0.8544331789016724
+P2,P2_scene_L11_3_chat,Summarize / Condense,B,4,True,False,0.7391530275344849
+P2,P2_scene_L11_3_chat,Summarize / Condense,C,3,True,False,0.920215904712677
+P2,P2_scene_L11_3_chat,Summarize / Condense,E,5,True,False,0.7750451564788818
+P2,P2_scene_L11_3_chat,Summarize / Condense,REAL,3,True,False,0.9999998807907104
+P2,P2_scene_L01_2_chat,Acknowledge,A,5,True,False,0.9031190872192383
+P2,P2_scene_L01_2_chat,Acknowledge,B,5,True,False,0.892973780632019
+P2,P2_scene_L01_2_chat,Acknowledge,C,5,True,False,0.906309962272644
+P2,P2_scene_L01_2_chat,Acknowledge,E,5,True,False,0.8520197868347168
+P2,P2_scene_L01_2_chat,Acknowledge,REAL,5,True,False,0.9999999403953552
+P2,P2_scene_L14_1_chat,Express Emotion,A,5,True,False,0.9020260572433472
+P2,P2_scene_L14_1_chat,Express Emotion,B,5,True,False,0.8824014663696289
+P2,P2_scene_L14_1_chat,Express Emotion,C,5,True,False,0.7855421304702759
+P2,P2_scene_L14_1_chat,Express Emotion,E,5,True,False,0.7855421304702759
+P2,P2_scene_L14_1_chat,Express Emotion,REAL,5,True,False,0.9999998807907104
+P2,P2_scene_L08_3_chat,Reverify / Confirm,A,5,True,False,0.8078696131706238
+P2,P2_scene_L08_3_chat,Reverify / Confirm,B,5,True,False,0.8043043613433838
+P2,P2_scene_L08_3_chat,Reverify / Confirm,C,5,True,False,0.7624176740646362
+P2,P2_scene_L08_3_chat,Reverify / Confirm,E,5,True,False,0.7017632722854614
+P2,P2_scene_L08_3_chat,Reverify / Confirm,REAL,5,True,False,0.9999998807907104
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,A,5,True,False,0.5560505390167236
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,B,5,True,False,0.9642430543899536
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,C,5,True,False,0.9642430543899536
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,E,5,True,False,0.9642430543899536
+P2,P2_scene_L03_2_chat,Partial Agree + Modification,REAL,5,True,False,1.0000001192092896
+P2,P2_scene_L09_3_chat,5W1H Question,A,5,True,False,0.6409323215484619
+P2,P2_scene_L09_3_chat,5W1H Question,B,5,True,False,0.8098008036613464
+P2,P2_scene_L09_3_chat,5W1H Question,C,5,True,False,0.8606226444244385
+P2,P2_scene_L09_3_chat,5W1H Question,E,5,True,False,0.7983312010765076
+P2,P2_scene_L09_3_chat,5W1H Question,REAL,5,True,False,1.0
+P2,P2_scene_L08_4_chat,Reverify / Confirm,A,5,True,False,0.7877550721168518
+P2,P2_scene_L08_4_chat,Reverify / Confirm,B,5,True,False,0.7862106561660767
+P2,P2_scene_L08_4_chat,Reverify / Confirm,C,5,True,False,0.794256865978241
+P2,P2_scene_L08_4_chat,Reverify / Confirm,E,5,True,False,0.7862106561660767
+P2,P2_scene_L08_4_chat,Reverify / Confirm,REAL,4,True,False,0.9999998807907104

@@ -40,12 +40,22 @@ except ImportError:  # standalone use
 SEMANTIC_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 STYLE_MODEL = "StyleDistance/styledistance"
 _MODELS: dict = {}
+# E quantizes cosine scores to six decimals, then orders by persistent row identity.
+# Rounding reduces floating-point jitter; frozen generations remain the evaluation source
+# of truth. It cannot guarantee identical retrieval across different model revisions.
+E_SCORE_DECIMALS = 6
 
 
 def _model(name):
     if name not in _MODELS:
         from sentence_transformers import SentenceTransformer
-        _MODELS[name] = SentenceTransformer(name, device="cpu")
+        kwargs = {}
+        if name == STYLE_MODEL:
+            import torch
+            # Its saved dtype may be bfloat16; CPU reduction differences at that
+            # precision are too large to repair with cosine-score rounding alone.
+            kwargs["model_kwargs"] = {"dtype": torch.float32}
+        _MODELS[name] = SentenceTransformer(name, device="cpu", **kwargs)
     return _MODELS[name]
 
 
@@ -116,10 +126,23 @@ class ExampleStore:
                     sender_role=str(r.sender_role or ""), stakes=str(r.stakes or ""))
                 for r in self.df.iloc[idx].itertuples()]
 
-    def _topk(self, qvec, mask, k):
+    def _stable_rank(self, ids, scores, k):
+        """Descending quantized score, then scene ID (never current DataFrame position)."""
+        def identity(i):
+            row = self.df.iloc[i]
+            return tuple(str(row.get(col, "")) for col in
+                         ("user_id", "scene_id", "register", "origin", "incoming", "response"))
+        rounded = np.round(np.asarray(scores, dtype=np.float64), E_SCORE_DECIMALS)
+        order = sorted(range(len(ids)), key=lambda j: (-rounded[j], identity(ids[j])))
+        return [int(ids[j]) for j in order[:k]]
+
+    def _topk(self, qvec, mask, k, stable=False):
         ids = np.flatnonzero(mask)
         if not len(ids):
             return []
+        if stable:
+            scores = self.sem[ids].astype(np.float64) @ np.asarray(qvec, dtype=np.float64)
+            return self._stable_rank(ids, scores, k)
         scores = self.sem[ids] @ qvec
         return list(ids[np.argsort(-scores)[:k]])
 
@@ -153,12 +176,16 @@ class ExampleStore:
         elif condition.startswith("E"):
             # style-aware: 15 topical candidates, re-ranked by closeness to the person's style centroid
             q = embed([incoming])[0]
-            cand = self._topk(q, self._mask(user_id, origins), 15)
+            cand = self._topk(q, self._mask(user_id, origins), 15, stable=True)
             if not cand:
                 return []
-            c = self.style_centroid(user_id, origins)
-            sty = self.sty[cand] @ c
-            idx = [cand[i] for i in np.argsort(-sty)[:k]]
+            # Canonical reduction order + float64 accumulation avoid row-order drift.
+            pool = np.flatnonzero(self._mask(user_id, origins))
+            pool = self._stable_rank(pool, np.zeros(len(pool)), len(pool))
+            c = self.sty[pool].astype(np.float64).mean(0)
+            c /= np.linalg.norm(c) + 1e-9
+            sty = self.sty[cand].astype(np.float64) @ c
+            idx = self._stable_rank(cand, sty, k)
         else:
             raise ValueError(condition)
         return self.df.iloc[idx] if return_rows else self._refs(idx)

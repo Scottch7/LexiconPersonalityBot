@@ -20,16 +20,20 @@ An agent in a Jupyter notebook that writes chat replies the way one specific per
 ## Conditions
 A is plain GPT. B adds semantic RAG plus the style card. C is context-aware RAG (intent and role filters). D adds human-verified examples (pending). E retrieves by StyleDistance.
 
-## Results (seed 1, 40 test items per person)
-The style score comes from a blind pairwise LLM judge, run in both orders. A win counts only if both orders agree, and only if the winner's meaning score is at least 4. The score is wins plus half the ties, and 0.5 means a draw. Ranges are 95% bootstrap confidence intervals.
+## Results (seed 1, 40 test items per person, style judge v2)
+The style score comes from a pairwise LLM judge (gpt-4o). It sees the person's style card and 8 of their real replies, and must pick A or B. We read the probability of each answer and average it over both orders, which cancels the judge's habit of favoring whichever reply comes first. A pair is a tie only if that average is within 0.05 of 0.5, or if the style winner's meaning score is below 4. The score is wins plus half the ties, so 0.5 means a draw. Ranges are 95% bootstrap confidence intervals. All conditions are scored on the same frozen seed-1 replies.
 
 | Comparison | P1 | P2 |
 |---|---|---|
-| B vs A | 0.80 [0.71, 0.88] | 0.65 [0.56, 0.74] |
-| C vs A | 0.81 [0.72, 0.89] | 0.66 [0.57, 0.75] |
-| E vs A | 0.81 [0.72, 0.89] | 0.64 [0.54, 0.74] |
-| C vs B | 0.53 [0.42, 0.62] | 0.59 [0.53, 0.66] |
-| E vs C | 0.54 [0.45, 0.64] | 0.50 [0.40, 0.60] |
+| B vs A | 0.90 [0.84, 0.96] (32 / 8 / 0) | 0.84 [0.74, 0.93] (30 / 7 / 3) |
+| C vs A | 0.90 [0.84, 0.96] (32 / 8 / 0) | 0.89 [0.80, 0.96] (33 / 5 / 2) |
+| E vs A | 0.91 [0.85, 0.96] (33 / 7 / 0) | 0.89 [0.80, 0.96] (34 / 3 / 3) |
+| C vs B | 0.56 [0.44, 0.69] (14 / 17 / 9) | 0.51 [0.39, 0.62] (13 / 15 / 12) |
+| E vs C | 0.41 [0.31, 0.51] (6 / 21 / 13) | 0.53 [0.40, 0.65] (15 / 12 / 13) |
+
+Counts are wins / ties / losses out of 40.
+
+*v1 judge, same replies, for reference:* P1 B 0.80, C 0.81, E 0.81 vs A, C vs B 0.53, E vs C 0.54; P2 B 0.65, C 0.66, E 0.64 vs A, C vs B 0.59, E vs C 0.50. v1 called 51% of all pairs ties; v2 calls 26% ties (12% from the judge itself, the rest from the meaning rule).
 
 | Guardrail | A | B | C | E | Real |
 |---|---|---|---|---|---|
@@ -38,17 +42,18 @@ The style score comes from a blind pairwise LLM judge, run in both orders. A win
 | Copy rate (P1 / P2) | 5% / 0% | 2% / 0% | 0% / 0% | 0% / 0% | n/a |
 
 **Takeaways**
-- Personalization clearly beats plain GPT on style for both people, and almost never loses (at most 5 losses out of 40). Meaning holds at 4.35 or above.
+- Personalization clearly beats plain GPT on style for both people: 0.84 to 0.91, with every interval well above 0.5 and at most 3 losses out of 40. Meaning holds at 4.35 or above.
 - The largest gain is length and tone. Plain GPT writes 11–13 words, while the personalized conditions write at the person's real length.
-- Context-aware filtering is no better than semantic retrieval for P1. For P2 the gain is small but its interval excludes 0.5. StyleDistance retrieval ties with context-aware retrieval.
+- The three retrieval methods are not clearly different. C vs B is a draw for both people. E vs C leans toward C for P1 (0.41), but its interval reaches 0.51, so it is not conclusive. The small P2 C vs B edge seen with the v1 judge did not hold up.
 - **TF-IDF person classifier (P1 vs P2):** P1 attribution rises from 10% under plain GPT to 68–75% with RAG. For P2 it stays at 82–90% in every condition, because plain GPT's full punctuated sentences already look like P2. That makes it a weak test for P2.
 
 ## Limitations
-- **Judge calibration missed its target:** the real reply beat plain GPT only 68% of the time (target 85%), with 22% ties. The judge is conservative, so the win rates above are likely underestimates. The rubric needs another iteration.
-- Only seed 1 has been run, with about 50 database rows per person.
+- **Judge calibration now passes:** we tested the judge on 60 database replies that are not in the test set (30 per person), split into a tune half and a check half, and froze it on the tune half, where its one change (gpt-4o-mini to gpt-4o) was chosen. On the check half the real reply beat plain GPT in 28 of 30 pairs (93%, target 85%), with 2 ties and 0 losses, and on the original 40 test pairs it now wins 37 (v1: 27).
+- The judge is still an LLM. It sees the person's real reply for each test item, and gpt-4o-mini wrote the replies, so some model bias may remain. The blind "sounds like me" pick by each person is the real check.
+- Only seed 1 has been run, with about 50 database rows per person, and five comparisons were made without a multiple-comparison correction.
 - The gists were auto-written. One P2 gist (L03_2) shares a 4-word phrase with the real reply, and all of them still need a human review.
 - Condition D, seeds 2–3 and each person's own blind "sounds like me" pick are not done yet.
 - P2 read the 1–5 "would you send this" scale reversed (1 means very likely). The pipeline doesn't use that column.
 
 ## Cost
-All runs together cost under $0.10 on gpt-4o-mini. Every call is cached, so re-running the notebook is free.
+The v2 judge run cost $0.82 (830 gpt-4o calls). All runs together, including generation and testing, cost under $1.00. Every call is cached, so re-running the notebook is free.
