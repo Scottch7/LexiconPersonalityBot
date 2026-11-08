@@ -1,0 +1,31 @@
+user_id,row_id,real,plain,p_x,p_first,p_second,outcome
+P2,P2_scene_L04_1_chat,That's awesome! Good job!,"That’s fantastic news! Great job, team! Your hard work really paid off!",1.0,1.0,1.0,x
+P2,P2_scene_L12_4_chat,It's pretty dry.,"it’s not great, honestly. kind of dry.",1.0,1.0,1.0,x
+P2,P2_scene_L16_1_chat,I don't think that is a good idea.,"I see where you're coming from, but I’m not sure a big table is the best way to go. It might get too cluttered.",1.0,1.0,1.0,x
+P1,P1_scene_L03_4_chat,Sure,Sounds good to me! Pepperoni it is!,1.0,1.0,1.0,x
+P2,P2_scene_L18_1_chat,"Man, you make too many excuses!",Must be a record for the most creative reasons!,0.9792,0.998,0.9604,x
+P1,P1_scene_L07_2_chat,Got it,"Got it, thanks for the heads up! I'll tune in at 7 on channel 4.",1.0,1.0,1.0,x
+P1,P1_scene_L17_3_chat,Yeah I can do it,I can put together the report now that the analysis is complete.,1.0,1.0,1.0,x
+P2,P2_scene_L19_2_chat,Man! Don't you get it? I don't want to go.,I'm really not up for it tonight. I wish you'd stop pushing me.,1.0,1.0,1.0,x
+P1,P1_scene_L05_1_chat,I m in,"count me in, i’ll be there!",1.0,1.0,1.0,x
+P2,P2_scene_L14_2_chat,Why? What happened to y  our dog?,I'm really sorry to hear that. What's going on with your dog? What kind of surgery does he need?,1.0,1.0,1.0,x
+P1,P1_scene_L18_3_chat,"That’s bad , need to fix it",This drop in accuracy is really disappointing. We need to figure out a solution fast.,1.0,1.0,1.0,x
+P2,P2_scene_L08_2_chat,Are we really?,"wait, just to be clear, is the concert definitely happening on sunday?",1.0,1.0,1.0,x
+P1,P1_scene_L11_1_chat,Nothing yet,Nothing's been decided yet.,1.0,1.0,1.0,x
+P2,P2_scene_L13_3_chat,Generate 10 times more than while you are at it.,that sounds like a recipe for an ocean of sameness!,0.672,0.4844,0.8597,x
+P1,P1_scene_L10_1_chat,Idk,"it's a bit complex, honestly. there's a lot to it, and I get how it might be confusing. let's break it down if you're interested.",1.0,1.0,1.0,x
+P1,P1_scene_L06_3_chat,Let’s manage,let's be mindful of that. we should prioritize our spending to make the most of it.,1.0,1.0,1.0,x
+P1,P1_scene_L04_3_chat,That’s sad,that's really disappointing to hear. I thought we were all set.,1.0,1.0,1.0,x
+P2,P2_scene_L02_4_chat,Ok.,"Absolutely, we can be the first group on Thursday.",1.0,1.0,1.0,x
+P2,P2_scene_L17_5_chat,Only if you pay me overtime :-),"Sure, but I might need a raise for that!",0.9938,0.9999,0.9878,x
+P1,P1_scene_L02_4_chat,Yeah that should be fine,"No problem, we can go at the beginning on Thursday.",1.0,1.0,1.0,x
+P2,P2_scene_L15_2_chat,I'm struggling with it.,it's pretty tough honestly. feeling a bit overwhelmed with everything going on. just trying to get through it all.,1.0,1.0,1.0,x
+P2,P2_scene_L09_4_chat,What is the name of the restaurant and where is it?,What’s the name of the place? And where can I find it?,0.618,0.991,0.2451,x
+P1,P1_scene_L15_4_chat,Yeah a lot of times,"yeah, it's been pretty slow for me as well",1.0,1.0,1.0,x
+P1,P1_scene_L09_2_chat,Nooo,No way! Seriously? What happened?,1.0,1.0,1.0,x
+P1,P1_scene_L18_1_chat,"No Worries, check the meeting minutes","No problem, TM. You might want to check the minutes for what we discussed.",1.0,1.0,1.0,x
+P2,P2_scene_L13_4_chat,Are you sure?,"we'll see about that, huh?",0.9999,0.9999,0.9999,x
+P2,P2_scene_L18_3_chat,I wonder why?,What caused the accuracy to drop like that?,0.5357,0.9998,0.0716,tie
+P2,P2_scene_L05_5_chat,I'm feeling a bit lazy. You guys continue without me.,"I’m really not feeling it today, sorry.",0.6048,0.9219,0.2878,x
+P2,P2_scene_L01_4_chat,That's fine with me.,sounds good to me!,0.5068,0.9987,0.015,tie
+P1,P1_scene_L10_3_chat,Idk,"I don't have strong feelings about it, honestly. TF-IDF just seemed like a straightforward option, but embeddings could also work well. It’s not",1.0,1.0,1.0,x
