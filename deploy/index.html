@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>LPB Style Questionnaire</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@__STLITE__/build/stlite.css" />
+  <style>
+    body { margin: 0; background: #ffffff; }
+    #loading { font-family: system-ui, sans-serif; color: #1C2B39; text-align: center; padding: 18vh 16px 0; }
+    #loading .bar { width: 220px; height: 6px; margin: 18px auto 0; border-radius: 3px; background: #EEF3F9; overflow: hidden; }
+    #loading .bar::after { content: ""; display: block; width: 40%; height: 100%; background: #0055A2;
+                            animation: slide 1.2s ease-in-out infinite; }
+    @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+  </style>
+</head>
+<body>
+  <!-- Built by deploy/build_site.py. Streamlit runs inside the browser (stlite), so there is no server. -->
+  <div id="loading">
+    <strong>Loading the questionnaire...</strong>
+    <div>The first visit can take up to a minute. After that it loads faster.</div>
+    <div class="bar"></div>
+  </div>
+  <div id="root"></div>
+  <script type="module">
+    import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@__STLITE__/build/stlite.js";
+
+    const loading = document.getElementById("loading");
+    // Hide our loading note as soon as Streamlit draws anything.
+    new MutationObserver((_, obs) => {
+      if (document.querySelector('[data-testid="stApp"] [data-testid="stMarkdown"]')) {
+        loading.remove();
+        obs.disconnect();
+      }
+    }).observe(document.getElementById("root"), { childList: true, subtree: true });
+
+    mount(
+      {
+        entrypoint: "app/questionnaire.py",
+        files: __FILES__,
+        streamlitConfig: __CONFIG__,
+      },
+      document.getElementById("root"),
+    );
+  </script>
+</body>
+</html>
