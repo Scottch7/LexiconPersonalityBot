@@ -12,3 +12,6 @@ data/responses/*
 
 # OS
 .DS_Store
+
+# Built static site (deploy/build_site.py)
+_site/

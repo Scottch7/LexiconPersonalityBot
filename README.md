@@ -37,9 +37,15 @@ streamlit run app/questionnaire.py
 
 Then open http://localhost:8501 in your browser. The app runs only while that terminal is open; press Ctrl+C to stop it.
 
-### Deploy (Streamlit Community Cloud)
+### Deploy (free static Hugging Face Space)
 
-The app is deployed from branch `main`, main file `app/questionnaire.py`. Every push to `main` redeploys it automatically.
+Live at https://scottch-lpb-questionnaire.static.hf.space (Space: `Scottch/lpb-questionnaire`).
+
+The questionnaire runs inside the participant's browser with [stlite](https://github.com/whitphx/stlite), so there is no server to drop requests or go to sleep, and answers never leave the browser until the participant downloads them. Every merge to `main` that changes `app/`, `.streamlit/` or `deploy/` rebuilds and uploads it (`.github/workflows/deploy-questionnaire.yml`, about a minute). You can also run it by hand from the Actions tab.
+
+- `deploy/build_site.py` builds the site into `_site/`. Preview it with `python3 deploy/build_site.py && python3 -m http.server 8000 -d _site`, then open http://localhost:8000.
+- `deploy/upload_space.py` uploads `_site/` to the Space. It needs the `HF_TOKEN` repo secret (a Hugging Face token with write access).
+- Only the Python standard library and Streamlit are available in the browser build. Don't use `time.sleep` (it does nothing there).
 
 ## Project layout
 
@@ -49,6 +55,7 @@ app/
   survey_logic.py    Item order, output rows, CSV save and resume
   config.py          Teammate names, pilot scenes, participants
   bank/              Question bank (blind version: no labels or test split)
+deploy/              Static site build and upload for the Hugging Face Space
 data/
   seeds/             Questionnaire v1 answers
   generated/         Generated datasets

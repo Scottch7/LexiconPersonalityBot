@@ -1,0 +1,40 @@
+name: Deploy questionnaire
+
+# Every merge to main that changes the app rebuilds the static site and uploads it to the
+# Hugging Face Space. Run it by hand from the Actions tab with "Run workflow".
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - ".streamlit/**"
+      - "deploy/**"
+      - ".github/workflows/deploy-questionnaire.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-questionnaire
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Build the site
+        run: python deploy/build_site.py _site
+
+      - name: Upload to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          pip install --quiet huggingface_hub==2.2.0
+          python deploy/upload_space.py _site

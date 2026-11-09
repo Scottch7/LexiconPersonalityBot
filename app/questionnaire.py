@@ -11,6 +11,7 @@ Run from the repo root:
 
 import html
 import re
+import sys
 import time
 import uuid
 from datetime import datetime
@@ -76,7 +77,11 @@ def teammate_names():
 
 def device():
     try:
-        ua = st.context.headers.get("User-Agent", "")
+        if sys.platform == "emscripten":  # browser build (deploy/): no request headers, so ask the browser
+            import js
+            ua = str(js.navigator.userAgent)
+        else:
+            ua = st.context.headers.get("User-Agent", "")
     except Exception:
         return ""
     return "mobile" if re.search(r"Mobi|Android|iPhone|iPad", ua) else "desktop"
